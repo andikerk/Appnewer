@@ -1,0 +1,228 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//------------------------------application.html.erb-----------------------------------//
+body{
+	margin-top:50px;
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+}
+.alert, .notice{
+	
+	text-align:center;
+
+
+}
+#heroimg{
+	width:100%;
+	height:auto;
+	display:block;
+	margin:auto;
+}
+footer{
+	height:50px;
+	background-color:lightgray;
+	margin:0px;
+}
+#cright{
+	text-align:right;
+	padding-top:5px;
+	margin:0;
+	font-size:.8em;
+	display:inline-block;
+	margin:auto;
+	width:150px;
+	
+}
+
+#imprint{
+	text-align:left;
+	padding-top:5px;
+	margin:0;
+	font-size:.8em;
+	float:right;
+	margin:auto;
+	width:180px;
+	
+
+}
+//---------------------------------landing_page---------------------------------------//
+
+#landhead{
+	color:red;
+	text-align:center;
+	margin-top:70px;
+}
+#slide{
+	display:block;
+	margin:auto;
+}
+#prodpricel{
+	font-size:1.7em;
+	font-weight:700;
+	padding:20px;
+	color:red;
+	text-shadow:0px 0px 17px white;
+	
+
+}
+//-----------------------------------navbar-----------------------------------------//
+.navbar-inverse{
+	background-color:rubyred;
+}
+
+#login, #logout{
+	margin-right:25px;
+}
+.nav .glyphicon{
+	font-size:1.2em;
+	
+		
+}
+.navbar-inverse .navbar-toggle{
+	margin-right:25px;
+	border:1px solid orange;	
+}
+.project.name.navbar-brand {
+	height:32px;
+	padding:6px;	
+	margin-top:9px;
+	margin-left:25px;
+	background-color:lightyellow;
+	border:1px solid orange;
+	border-radius:4px;
+}
+.navbar-brand a{
+	height:12px;
+	color:darkred;
+	padding:0px;
+}
+
+//---------------------------------search icon in nav--------------------------------//
+.glyphicon-search{
+	top:3px;
+}
+
+
+
+//---------------------------------search modal---------------------------------------//
+
+#q{ 
+	background-color:lightblue;
+	margin-left:20px;
+
+	border-radius:4px;
+}
+#searchbtnmod{
+	margin-right:20px;
+	margin-left:-30px;
+}
+.modal-content{
+	background-color:white;
+	border:1px solid black;
+}
+
+//--------------------------------contact page --------------------------------------//
+#contactpage{
+	background-image:url(image-path("whitebike.jpg"));
+	margin-top:50px;
+}
+#contactrow{
+	margin-left:0;
+	margin-right:0;
+}
+#frame1, #frame2, #frame3{
+	margin:10px;
+	margin-top:20px;
+	overflow:hidden;
+	border-radius:8px;	
+	
+}
+
+#frame3 h5,#frame3 p{
+	margin:3px;
+	margin-left:20px;
+	
+}
+#frame3{
+	background-color:linen;
+}	
+		
+
+#contactus{
+	padding-top:30px;
+	margin-left:0px;
+	text-shadow:0px 0px 7px red;
+	color:linen;
+	text-align:center;
+}
+
+#textfieldname, #textfieldmail, #textfieldmessage,#sendmail{
+	background-color:linen;
+	width:100%;
+}
+#sendmail{
+	width:70px;
+	margin-top:20px;
+	margin-bottom:20px;
+	float:left;
+}
+#frame2 iframe{
+	border-radius:8px;
+	display:block;
+	margin:auto;
+}
+
+
+//-------------------------------thank_you page--------------------------------------//
+
+#gohome{
+	margin:20px;
+	margin-left:50px;
+}
+#messagereceived, #gohome{
+	background-color:linen;
+}
+
+//--------------------------------admin-----------------------------------------------//
+
+#nummerfeld{
+	padding-left:50px;
+}
+#rahmen{
+	width:200px;
+	height:auto;
+}
+//------------------------------edit(admin)------------------------------------------//
+#idfield, #idsubmit{
+	
+	float:left;
+	margin-left:15px;
+}
+#idfield{
+	width:80px;
+}
+#idsubmit{
+	width:50px;
+}
+#adminframe{
+	margin:25px;
+	background-color:mistyrose;	
+}
+#adminframe label{
+	margin-left:15px;
+}
+#adminframe h5, #adminframe p{
+	margin:15px;
+}
+#adminframe .form-inline{
+	margin-bottom:20px;
+	width:200px;
+	height:34px;
+}
+#rahmen{
+	margin:15px;
+}
+

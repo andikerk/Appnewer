@@ -1,0 +1,20 @@
+<h1>About about</h1>
+
+
+
+<% if (Rails.env.production?) 
+		then var = "ilike" 
+	elsif (Rails.env.development?) 
+		then var = "LIKE" 
+	else var = "none" 
+   end %>
+<%= var%>
+
+
+
+
+
+
+
+
+

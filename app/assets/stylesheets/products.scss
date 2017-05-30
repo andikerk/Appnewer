@@ -1,0 +1,85 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-fluid{
+	padding:0;
+}
+#ourprod{
+	text-align:center;
+	margin-top:80px;
+	margin-bottom:20px;
+}
+#prodindexrow{
+	margin-left:0px;
+	margin-right:0px;
+}
+#prodcont{
+	border:0.01px solid linen;
+	margin:0px;
+	padding:5px;
+}
+#prodname{
+	font-size:1.4em;
+	text-align:center;
+	margin:10px;
+}
+#proddescr,#prodcol,#prodwheelsz,#SED{
+	margin:7px;
+	font-size:10px;
+	line-height:14px;
+}
+#proddescr{
+	margin-left:0;
+	margin-right:0;
+}
+#prodpic{
+	width:100%;
+	height:auto;
+	display:block;
+	margin-bottom:10px;
+
+}
+#prodprice{
+	width:75px;
+	display:block;
+	margin:auto;
+	padding:1px;
+	
+	font-weight:700;
+	background-color:#F08011;
+	text-align:center;
+	color:white;
+	
+	border-radius:3px;
+	
+}
+#prodid{
+	margin:0;
+	margin-left:7px;
+	font-size:0.7em;
+}
+#SED{
+	font-size:.7em;
+	text-align:center;
+}
+#newprod{
+	font-size:.7em;
+	text-align:center;
+	margin-bottom:5px;
+}
+
+
+.reviews p{
+	margin:10px;
+	margin-left:10px;
+}
+#showprodrow{
+	margin-top:90px;	
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#prodshowdescr p, h3{
+	margin:8px;
+}

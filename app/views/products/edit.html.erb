@@ -1,0 +1,91 @@
+<div id="adminframe">
+	
+		<h5>Edit Product</h5>
+
+
+	
+
+
+
+
+
+
+		<%= form_for (@product) do |f| %>
+		
+		<form>
+	  
+			<div class="form-group">
+			    <%= f.label :name %>
+			    <%= f.text_field :name, class:"form-control" %>
+			</div>
+
+			<div class="form-group">
+			    <%= f.label :id %>
+			    <%= f.text_field :id, class:"form-control" %>
+			</div>
+
+			<div class="form-group">
+			    <%= f.label :description %>
+			    <%= f.text_area :description, class:"form-control" %>
+			</div>
+
+			<div class="form-group">
+			  	<%= f.label :colour %>
+			  	<%= f.text_field :colour ,class:"form-control"%>
+			</div>
+
+			<div class="form-group">
+			  	<%= f.label :Wheelsize %>
+			  	<%= f.number_field :wheelsize, class:"form-control"%>
+			</div>
+
+			<div class="form-group">
+			    <%= f.label :image_url %>
+			    <%= f.text_area:image_url, class:"form-control" %>
+			</div>
+
+
+
+			<div id="rahmen">
+			    
+			     <%= if (@product != nil) then image_tag(@product.image_url, class: "img-responsive", alt:"no image available") 
+			     end %>
+
+		  	</div>
+
+		  	<div class="form-group">
+			    <%= f.label :price %>
+			    <%= f.number_field :price, class:"form-control" %>
+			</div>
+
+
+			<button class="btn btn-default">
+			    <%= f.submit%>
+			</button>
+
+			<button class="btn btn-default">
+				<%= link_to 'Show', @product %>	
+			</button>
+
+			<button class="btn btn-default">
+				<%= link_to 'Back', products_path %>
+			</button>
+
+			<button class="btn btn-default" type="submit">
+				<%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</button>
+
+			<button class="btn btn-default">
+				<%= link_to 'New Product', new_product_path %>
+			</button>
+	
+
+		</form>
+		
+	<% end %>
+
+
+
+
+
+</div>

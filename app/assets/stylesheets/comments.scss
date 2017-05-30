@@ -1,0 +1,38 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.rated, .rating{
+	image-size:1em;
+	margin:10px;
+	margin-left:10px;
+}
+#newcommentp{
+	margin-top:3px;
+	margin-bottom:0px;
+	margin-left:8px;
+}
+#starp{
+	margin-top:0px;
+	height:0px;
+}
+#showpic{
+	display:block;
+	margin:auto;
+	margin-bottom:30px;
+}
+#newcommentbtn{
+	margin-left:-23px;
+	margin-top:-10px;
+}
+.pagination{
+	margin:10px;
+}
+.reviews hr{
+	margin:7px;
+}
+.pagination { padding: 3px; margin: 3px; } 
+.pagination a { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #aaaadd; text-decoration: none; color: #000099; } 
+.pagination a:hover, 
+.pagination a:active { border: 1px solid #000099; color: white; } 
+.pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #000099;             font-weight: bold; background-color: 3EA7C9; color: #FFF; } 
+.pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd; }

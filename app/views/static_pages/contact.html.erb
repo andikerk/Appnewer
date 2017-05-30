@@ -1,0 +1,66 @@
+
+<div id = "contactpage">
+
+
+<%= flash[:notice] %>
+
+<%= form_tag("/static_pages/thank_you") do %>
+	<div class="row" id="contactrow">
+		  	<div class="col-md-4 " id="Kolumne">
+		  		<div id="frame1">
+				  	<h1 id="contactus">Contact Us</h1>
+
+				    <div class="form-group">
+				    <!--  <%= label_tag :name, "Name"  %>-->
+				      <%= text_field_tag :name, nil,  required:"required", class: "form-control", placeholder: "Enter Name",id:"textfieldname" %>
+				    </div>  
+				    
+				    <div class="form-group">
+				    <!--  <%= label_tag :email, "Your Email Address" %>-->
+				      <%= email_field_tag :email, nil, required:"required", class: "form-control", placeholder: "Enter Email Address",id:"textfieldmail" %>
+				    </div>
+
+				    <div class="form-group">
+				    <!--  <%= label_tag :message, "Your Message" %>-->
+				      <%= text_area_tag :message, nil, required:"required", class: "form-control", placeholder: "Enter Message",id:"textfieldmessage" %>
+				      
+				    </div class="form-group"> 
+				      <%= submit_tag "Send",class:"btn btn-default",id:"sendmail"%>
+
+					  
+				</div><!--/frame1-->
+				 					 <% end %> 
+			</div>
+
+			
+   		    <div class="col-md-4" id="googlemap">
+				<div id="frame2">
+
+
+					<iframe width="100%" height="350" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=Kottbusser%20Damm%2084%20Berlin%2C%20Deutschland&key=<%= ENV["GOOGLEMAPKEY"]%>" allowfullscreen></iframe>
+				</div>
+			</div>
+				
+				
+			<div class="col-md-4" id="openhours">
+				<div id="frame3">
+					  	<h5>BerlinBikes</h5>
+					  	<br>
+					  	<p>Kottbusser Damm 84</p>
+					  	<p>10967 Berlin</p>
+					  	<p>Tel. 0311 6783 9200</p>
+					  	<br>
+					  	<p>Opening hours: Mon- Sa, 10:00 - 18:00</p>
+				</div>
+			</div>
+
+	</div><!--/row-->
+
+</div>
+
+
+
+
+
+

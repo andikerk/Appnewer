@@ -1,0 +1,76 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//-------------------------sign_up  & sign_in & forgot pwd--------------------------------------//
+
+#sendpwd{
+	width:260px;
+	font-size:1em;
+	padding:6px;
+}
+.new_user{
+	margin-top:20px;
+	margin-bottom:20px;
+	background-color:linen;
+	width:300px;
+	display:block;
+	margin:auto;
+	padding:20px;
+	border-radius:10px;
+}
+#new_user {
+	margin-top:70px;
+	margin-bottom:50px;	
+}
+.new_user a{
+	background-color:lightblue;
+	padding-left:10px;
+	padding-right:10px;
+	border:1px solid lightgray;
+	border-radius:3px;
+	height:20px;
+	font-size:1em;
+	line-height:30px;
+	width:100px;
+}
+//---------------------edit_user-----------------------------------------//
+
+#editpwdrow{
+	margin-left:15px;
+	margin-right:15px;
+}
+.edit_user{
+
+	background-color:linen;
+	width:300px;
+	display:block;
+	margin:auto;
+	padding:20px;
+	border-radius:10px;
+}
+#edit_user {
+	margin-top:20px;
+	margin-bottom:20px;	
+}
+.edit_user a{
+}
+                //-----------cancel account-----------//
+#cancel{
+	background-color:linen;
+	width:300px;
+	display:block;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:20px;
+	border-radius:10px;
+	
+}
+#unhappy, #cancelback{	
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:0px;	
+}
+
