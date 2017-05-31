@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post 'static_pages/thank_you' => 'static_pages#thank_you'
 
-  get 'static_pages/admin' => 'static_pages#admin' 
+  #get 'static_pages/admin' => 'static_pages#admin' 
 
   root 'static_pages#landing_page' 
 
