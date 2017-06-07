@@ -38,8 +38,8 @@
           <% end %>
         </div>
         
-              <% if(@product.comments.any?)
-              dummy = "comments" end
+              <% if(@product.comments.any?)%>
+              <%dummy = "comments"
               if(@comments.count==1) then
               dummy = "comment"
               end%>
@@ -56,10 +56,10 @@
               <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
               <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
               <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
-              <%end%>
+         
 
-              
-        
+              <%end%>
+        <%end%>
 
 
 
