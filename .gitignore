@@ -24,4 +24,4 @@
 /config/local_env.yml
 
 #Ignore stripe keys
-/config/initializers/stripe.rb
+
