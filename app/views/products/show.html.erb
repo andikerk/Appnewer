@@ -32,13 +32,15 @@
           <%=link_to "to purchase this item please log in", new_user_session_path %>
         </button>
         <%end%>
+
+        <%if signed_in?%>
         <div id="stripebtn">
           <%= form_tag "/payments/create" do %>
           <%= hidden_field_tag(:product_id, @product.id) %>
           <%= render partial: "shared/stripe_checkout_button" %>
           <% end %>
         </div>  
-
+        <%end%>
 
 
               <% if(@product.comments.any?)
