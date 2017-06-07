@@ -26,20 +26,21 @@
           <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
         </p>
 
-        <%if !signed_in?%>
-        <button class="btn btn-default btn-info" id="buy?login!">
-          <#%=link_to "to purchase this item please log in", new_user_session_path %>
-        </button>
-        <%end%>
+        
+        
+
+        
         <div id="stripebtn">
           <%= form_tag "/payments/create" do %>
           <%= hidden_field_tag(:product_id, @product.id) %>
           <%= render partial: "shared/stripe_checkout_button" %>
           <% end %>
-        </div>
+        </div>  
         
-              <% if(@product.comments.any?)%>
-              <%dummy = "comments"
+
+
+              <% if(@product.comments.any?)
+              dummy = "comments" end
               if(@comments.count==1) then
               dummy = "comment"
               end%>
@@ -56,10 +57,10 @@
               <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
               <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
               <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
-         
-
               <%end%>
-        <%end%>
+
+              
+        
 
 
 
