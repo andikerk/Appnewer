@@ -11,7 +11,10 @@ gem 'rails', '~> 5.0.2'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+	gem 'sqlite3'
+	gem 'rspec-rails', '~> 3.5'
+	gem 'rails-controller-testing'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 # Use Puma as the app server
@@ -63,3 +66,5 @@ gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'b
 gem 'cancancan', '~> 1.10'
 
 gem 'will_paginate', '~> 3.1.1'
+
+gem 'stripe'

@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
 	  @message = params[:message]
 
 	  
-	# ActionMailer::Base.mail(:from => 'bikeshopnew.gmail.com',
+	# ActionMailer::Base.mail(:from => 'zweiradeins.gmail.com',
 	#						:to => @email,
 	# 	 	    			:subject => "A new contact form message from #{@name}",
 	#        				:body => @message).deliver_now
@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
 
   def landing_page
  
-  	@products = Product.limit(7).where("price<2000").where( "price>20")                         #where("id%2=1").reverse
+  	@products = Product.limit(3)                         #where("id%2=1").reverse
 
   end
   def imprint

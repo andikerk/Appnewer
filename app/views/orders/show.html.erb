@@ -1,1 +1,12 @@
-<p>views/orders/show.html.erb</p>
+
+<%@product=Product.find(@order.product_id)%>
+<p> Order:<%= @order.id%></p>
+<p>Hello <%= current_user.username.capitalize%>,</p><p>thank you for purchasing:</p>
+<p>"<%= @product.name%>, <%= @product.description%>"!</p>
+<p>You made an excellent choice!</p>
+<p>In our behalf Stripe charged your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %></p>
+<p>Thank you and have a nice day!</p>
+
+
+
+

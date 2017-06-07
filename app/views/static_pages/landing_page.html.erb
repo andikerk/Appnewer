@@ -25,10 +25,10 @@
     <%= image_tag(product.image_url, class: "img-responsive img-thumbnail", id:"slide") %>
 
     
-     <%#= image_tag(product.image_url,class:"image-responsive", id:"slide") %>
+     
       <div class="carousel-caption">
-        <p><%= product.name %></p>
-        <p id="prodpricel">€ <%= product.price %>,-</p>
+        <h3><%= product.name %></h3>
+        <p id="prodpricel"><%= number_to_currency(product.price.to_d/100,unit:"€") %></p>
       </div>
       <%end%>
     </div>

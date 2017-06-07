@@ -5,7 +5,8 @@
         <p id="proddescr"><%= product.description %></p>
     
         <%= link_to image_tag(product.image_url, class: "img-responsive img-thumbnail", id:"prodpic"), product %>
-        <p id="prodprice">€ <%= product.price %>,-</p>
+        <p id="prodprice"><%= number_to_currency(product.price.to_d/100,unit:"€") %></p>
+        
         <p id="prodcol"><%= product.colour %></p>
         <p id="prodid">ID:<%= product.id %></p>
         <p id="prodwheelsz">Wheelsize <%= product.wheelsize %></p>
