@@ -1,5 +1,5 @@
 
- $(document).on('turbolinks:load', function (){
+/* $(document).on('turbolinks:load', function (){
     setTimeout(function(){$('.alert').fadeOut();}, 3000);
 
     setTimeout(function(){$('.notice').fadeOut();}, 3000);
@@ -11,22 +11,22 @@
         return $(this).attr('data-score');
         }
       });
-  }); 
+  }); */
 
 
 
 
 
-/*  $(document).on('turbolinks:load', function (){
+  $(document).on('turbolinks:load', function (){
     setTimeout(function(){$('.alert').fadeOut();}, 3000);
   });
 
   $(document).on('turbolinks:load', function (){
     setTimeout(function(){$('.notice').fadeOut();}, 3000);
-  });  */
+  });  
 
 
-/*  $(document).on('turbolinks:load', function(){
+  $(document).on('turbolinks:load', function(){
   $('.rating').raty({
     starHalf: '<%= asset_path 'star-half.png' %>',
     starOff: '<%= asset_path 'star-off.png' %>',
@@ -43,7 +43,7 @@
       return $(this).attr('data-score');
     }
   });
-});*/
+});
   /*   $(document).on('turbolinks:load', function(){
 
      $('.rating').raty( { path: '/assets', scoreName: 'comment[rating]' });
