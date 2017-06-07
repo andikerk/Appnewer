@@ -10,8 +10,10 @@ class PaymentsController < ApplicationController
 			:amount => (@product.price), 
 			:currency => "eur",
 			:source => token,
-			:description => params[:stripeEmail]
-		)
+			:receipt_email => "#{@user.email}",
+			:description => "@product.name, @product_description"
+			)
+		
 
 		if charge.paid
 		@order = Order.create!(product_id: @product.id, user_id: @user.id, total: @product.price)
