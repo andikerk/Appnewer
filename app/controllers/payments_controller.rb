@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-
+before_action :authenticate_user!
 	def create
 	token = params[:stripeToken]
 	@product = Product.find(params[:product_id])
@@ -17,7 +17,12 @@ class PaymentsController < ApplicationController
 
 		if charge.paid
 		@order = Order.create!(product_id: @product.id, user_id: @user.id, total: @product.price)
-		redirect_to order_path@order
+
+		session[:id] = @order.id
+
+		redirect_to order_path(@order)
+
+		UserMailer.welcome_email(@user).deliver_now
 		end
 		
 

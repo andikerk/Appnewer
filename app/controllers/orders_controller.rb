@@ -1,7 +1,8 @@
 
 class OrdersController < ApplicationController
 
-  
+  load_and_authorize_resource
+  skip_authorize_resource :only => :show
 
   def index
     if current_user.admin?
@@ -10,29 +11,10 @@ class OrdersController < ApplicationController
   end
 
   def show
-    if signed_in?
-    @order = Order.where(user_id:current_user.id).last
-    end
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def destroy
+    @id= session[:id]
+    @order = Order.find(@id)
+ 
   end
 
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:product_id, :user_id)
-    end
 end

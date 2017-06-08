@@ -28,7 +28,7 @@
 
         <%if !signed_in?%>
         <button class="btn btn-default btn-info" id="buy?login!">
-          <%=link_to "to purchase this item please log in", new_user_session_path %>
+          <%=link_to "Buy? Login!", new_user_session_path %>
         </button>
         <%end%>
         <%if signed_in?%>
@@ -42,12 +42,13 @@
 
 
 
-        <% if(@product.comments.any?)%>
-              <%dummy = "comments"%>
+        
+                <%dummy = "comments"%>
 
                 <% if(@comments.count==1) then
-                dummy = "comment"
-                end%>
+                dummy = "comment" end%>
+
+                
 
           <p> <%=@comments.count%> <%=dummy%>, average rating: <%= @product.average_rating.round(1) %> out of 5</p>
 
@@ -65,7 +66,7 @@
 
           
 
-        <%end%>
+       
 
 
 

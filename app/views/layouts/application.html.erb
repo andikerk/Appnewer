@@ -118,7 +118,7 @@
 		
 	    <%= link_to static_pages_contact_path do%><p id="cright"> &copy; 1815 Bike Berlin</p><%end%>
  		<%= link_to static_pages_imprint_path do%><p id= "imprint"> imprint/terms & conditions</p><%end%>
-	<%if signed_in? %>   	<%=current_user.id%> <%end%>
+	<%if signed_in? %>   	<%=current_user.id%> <%end%><%= session[:id]%>
 	</footer>
   </body> 
 </html>
