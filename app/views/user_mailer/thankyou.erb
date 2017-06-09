@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+<h3>  Welcome to zweiradeins, Order: <%= @order.id%></h3>
+===============================================
+ 
+
+<p>Hello <%=@user.username.capitalize%>, thank you for shopping with us!</p>
+
+<p>With "<%= @product.name%>, <%= @product.description%>" you made a truly excellent choice!
+On our behalf Stripe debited your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %>.</p>
+<p>Thank you and have a nice day!</p>
+<p>Your zweiradeins-team</p>
+
+  </body>
+</html>

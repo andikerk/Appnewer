@@ -13,12 +13,13 @@ class UserMailer < ApplicationMailer
   	end
     
  
-  def welcome_email(user)
+  def thankyou(user, product, order)
     @user = user
     #   @id= #session[:id]
-   # @order = Order.find(@id)
-   # @product = product
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+   
+    @product = product
+    @order = order
+    mail(to: @user.email, subject: 'Thank You for Shopping with Us!')
   end
 
 end

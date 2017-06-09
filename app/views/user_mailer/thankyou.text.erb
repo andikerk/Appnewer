@@ -1,0 +1,10 @@
+
+Welcome to zweiradeins, Order: <%= @order.id%>
+===============================================
+ 
+
+Hello <%=@user.username.capitalize%>,thank you for shopping with us!
+
+With "<%= @product.name%>, <%= @product.description%>" you made a truly excellent choice!
+On our behalf Stripe debited your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %>.
+Thank you and have a nice day!

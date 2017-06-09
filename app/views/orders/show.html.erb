@@ -1,12 +1,14 @@
 
-<%@product=Product.find(@order.product_id)%>
-<p> Order:<%= @order.id%></p>
-<p>Hello <%= current_user.username.capitalize%>,</p><p>thank you for purchasing:</p>
-<p>"<%= @product.name%>, <%= @product.description%>"!</p>
-<p>You made an excellent choice!</p>
-<p>On our behalf Stripe charged your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %></p>
+<div id="showorder">
+<p> Order:<%= @order.id%></p><br>
+<p>Hello <%= current_user.username.capitalize%>,</p><br><p>thank you for shopping with us!</p>
+<p>"<%= @product.name %>, <%= @product.description%>"</p>
+<p>is a truly excellent choice!
+On our behalf Stripe debited your account with <%= number_to_currency(@order.total.to_d/100,unit:"€") %>.</p><br>
 <p>Thank you and have a nice day!</p>
-
+<p>Your zweiradeins Team.</p><br>
+<p><%= link_to "Back to Product", product_path(@product)%></p>
+</div>
 
 
 

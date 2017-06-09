@@ -1,11 +1,10 @@
 
-Welcome to example.com, <%= @user.username %>
+Welcome to zweiradeins, <%= @user.username %>
 ===============================================
  
-<#%@product=Product.find(@order.product_id)%>
- Order:<#%= @order.id%>
-Hello <#%= current_user.username.capitalize%>,thank you for purchasing:
-"<#%= @product.name%>, <#%= @product.description%>"!
+
+Hello <%=@user.username.capitalize%>,thank you for shopping with us!
+
 You made an excellent choice!
-In our behalf Stripe charged your account with <#%= number_to_currency(@product.price.to_d/100,unit:"€") %>
+On our behalf Stripe charged your account.
 Thank you and have a nice day!

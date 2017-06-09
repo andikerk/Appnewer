@@ -4,7 +4,9 @@
     <% @comments.each do |comment| %>
 
         <div class="reviews">
+        
             <hr>
+
             <%if comment.user == nil%>
                 <p><%="User deleted"%>
             <% else%>

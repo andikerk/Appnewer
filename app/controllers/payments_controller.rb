@@ -17,29 +17,20 @@ before_action :authenticate_user!
 
 		if charge.paid
 		@order = Order.create!(product_id: @product.id, user_id: @user.id, total: @product.price)
-
-		session[:id] = @order.id
-
+		flash[:notice] = "Payment successful"
+		session[:order_id] = @order.id
 		redirect_to order_path(@order)
-
-		UserMailer.welcome_email(@user).deliver_now
-		end
-		
-
-		flash[:success] = "Payment processed successfully"
+		UserMailer.thankyou(@user, @product, @order).deliver_now		
+		end	
 		
 	rescue Stripe::CardError => e
 		# The card has been declined
 		body = e.json_body
 		err  = body[:error]
 		flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
-
 		redirect_to product_path
 	end
 
-	
-	
-
- end
+  end
 
 end
