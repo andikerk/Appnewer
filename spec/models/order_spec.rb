@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe Order do
 	before do
-		@user=User.create!(username: "Bill", email: "bill@bill", password: "billbill")
-		@product=Product.create!(name:"Maria",description: "great bike", price:"229")
+		#@user=User.create!(username: "Bill", email: "bill@bill", password: "billbill")
+		@user = FactoryGirl.create(:user)
+		#@product=Product.create(name:"Maria",description: "great bike", price:"229")
+		@product = FactoryGirl.create(:product)
 	end
 
 	it "is valid" do

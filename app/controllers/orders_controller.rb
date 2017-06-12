@@ -11,11 +11,9 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @id= session[:order_id]
+    @id = session[:order_id]
     @order = Order.find(@id)
-    #@product = Product.find(params[:product_id])
-    @product=Product.find(@order.product_id)
+    @product = Product.find(@order.product_id)
   end
-
 
 end
