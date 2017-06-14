@@ -6,14 +6,19 @@ class OrdersController < ApplicationController
 
   def index
     if current_user.admin?
-  @order = Order.all
+        @order = Order.all
     end
   end
 
   def show
-    @id = session[:order_id]
-    @order = Order.find(@id)
-    @product = Product.find(@order.product_id)
+  
+    @order = Order.find(params[:id])
+    if @order.user == current_user
+       @product = Product.find(@order.product_id)
+
+    else
+      redirect_to root_path, notice: "You are not authorized to access this page"
+    end
   end
 
 end

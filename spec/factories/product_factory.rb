@@ -6,6 +6,6 @@ FactoryGirl.define do |variable|
 		colour "red"
 		wheelsize "45"
 		price "45670"
-
+		
 	end
 end

@@ -4,7 +4,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+
     @products = Product.all
+
       if params[:q]
         search_term = params[:q]
         @products = Product.search(search_term)
@@ -16,7 +18,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("rating  DESC").paginate(page:params[:page], per_page: 2)
+    
+    @comments = @product.comments.order("created_at  DESC").paginate(page:params[:page], per_page: 2)
 
   end
 

@@ -4,7 +4,7 @@ describe Order do
 	before do
 		#@user=User.create!(username: "Bill", email: "bill@bill", password: "billbill")
 		@user = FactoryGirl.create(:user)
-		#@product=Product.create(name:"Maria",description: "great bike", price:"229")
+		#@product=Product.create!(name:"Maria",description: "great bike", price:"229")
 		@product = FactoryGirl.create(:product)
 	end
 

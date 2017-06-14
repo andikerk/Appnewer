@@ -23,21 +23,22 @@
 
     setTimeout(function(){$('.notice').fadeOut();}, 5000);
   
-
+  $('.img-zoom').elevateZoom({
+    zoomType: "lens",
+    lensShape : "round",
+    lensSize    : 150,
+    cursor: "crosshair"
+  });
  
   $('.rating').raty({
-    starHalf: '<%= asset_path 'star-half.png' %>',
-    starOff: '<%= asset_path 'star-off.png' %>',
-    starOn: '<%= asset_path 'star-on.png' %>',
+    path: '/assets/',
     scoreName: 'comment[rating]'
     
   });  
 
 
   $('.rated').raty({
-    starHalf: '<%= asset_path 'star-half.png' %>',
-    starOff: '<%= asset_path 'star-off.png' %>',
-    starOn: '<%= asset_path 'star-on.png' %>',
+    path: '/assets/',
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');

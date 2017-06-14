@@ -4,6 +4,11 @@ GIT
   specs:
     bcrypt (3.1.11)
 
+GIT
+  remote: https://github.com/deivid-rodriguez/byebug.git
+  revision: 38932abb75c38be76c22605575a1dbc984d049ec
+  specs:
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,6 +51,7 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.4)
     bindex (0.5.0)
+    brakeman (3.6.2)
     builder (3.2.3)
     cancancan (1.17.0)
     coffee-rails (4.2.2)
@@ -208,7 +214,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt!
-  byebug
+  brakeman (~> 3.6, >= 3.6.2)
+  byebug!
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)
   devise

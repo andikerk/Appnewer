@@ -32,9 +32,7 @@ describe ProductsController, :type => :controller do
     end
 
     it "successfully updates product price" do
-     # @attr = { :name => @product.name, :image_url => @product.image_url, :id => @product.id, :price => "44333" }
-       @attr = { name: @product.name, image_url: @product.image_url, id: @product.id, price: "44333" }
-     # put :update, params: { :id => @product.id, :product => @attr }
+      @attr = { name: @product.name, image_url: @product.image_url, id: @product.id, price: "44333" }
       put :update, params: { id: @product.id, product: @attr }
       @product.reload
       expect(@product.price).to eq 44333

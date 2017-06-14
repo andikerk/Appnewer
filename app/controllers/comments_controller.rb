@@ -5,7 +5,10 @@ class CommentsController < ApplicationController
 
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
+    logger.debug "New comment: #{@comment.attributes.inspect}"
+    logger.debug "Article should be valid: #{@comment.valid?}"
     @comment.user = current_user
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
@@ -14,35 +17,33 @@ class CommentsController < ApplicationController
         format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-      end
+
+    end
+
   end
 
-	#  @product = Product.find(params[:product_id])
-	#  @comment = @product.comments.new(comment_params)
-	#  @comment.user = current_user
-	#  @comment.save
-	#  redirect_to product_path(@product)
-  	
-  	def index
-  	 # @comments = Comment.all.order("created_at DESC")	
-      #@comments = Comment.all.order("comment.length DESC")  
-      Comment.first.highest_rating_comment
-  	end
 
-  	def destroy
+  	
+  def index
+  	  @comments = Comment.all.order("created_at DESC")	
+      #@comments = Comment.all.order("comment.length DESC")  
+     # Comment.first.highest_rating_comment
+  end
+
+  def destroy
       @comment = Comment.find(params[:id])
       product = @comment.product
       @comment.destroy
       redirect_to product
-  	end
+  end
 
 
 
 
 	private
 
-  	def comment_params
+  def comment_params
     	params.require(:comment).permit(:user_id, :body, :rating)
-    end
+  end
 
 end

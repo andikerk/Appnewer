@@ -73,7 +73,7 @@
   </div>
 
   <div class="col-sm-4 col-xs-12">
-        <%= image_tag(@product.image_url, class: "img-responsive img-thumbnail",id: "showpic") %>
+        <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail", data_zoom_image: @product.image_url, id: "showpic") %>
 
   </div>
 
@@ -91,3 +91,4 @@
         <%= link_to 'Back', products_path %>
         <%= link_to 'New Product', new_product_path %>
         <%end%>
+
