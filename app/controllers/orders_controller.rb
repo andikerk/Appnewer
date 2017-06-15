@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   skip_authorize_resource :only => :show
 
   def index
-    if current_user.admin?
+    if signed_in?&&current_user.admin?
         @order = Order.all
     end
   end
