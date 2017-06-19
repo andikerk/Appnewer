@@ -25,34 +25,22 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
   $('.notice').delay(3000).fadeOut(2000);
 
   refreshRating();
+
+   
+});
+
+$(document).on('turbolinks:load ajaxSuccess', function() {
+
   refreshRating();
    
 });
 
-
-
-/*You'll need to initialise it first, e.g.:*/
-
-
-/*Response.crossover(function(){
-if( Response.band(1023) ){
-initelevateZoom();
-} else {
-destroyelevateZoom();
-}
-});
-
-Response.create({
-prop: "width",
-prefix: "data-src",
-breakpoints: [0, 767, 1023],
-lazy: false,
-//verge:100
-});*/
 var width = window.screen.width;
-console.log(width);
 
-$(document).on('turbolinks:load ajaxSuccess', function(){if(width>800){
+
+$(document).on('turbolinks:load ajaxSuccess', function()
+
+  {if(width>800){
 
    $('.img-zoom').elevateZoom({
     zoomType: "lens",
