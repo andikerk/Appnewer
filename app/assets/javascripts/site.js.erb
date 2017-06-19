@@ -19,37 +19,36 @@ var refreshRating = function(){
   });
 };
 
-
+var width = window.screen.width;
 
 
 $(document).on('turbolinks:load ajaxSuccess', function() {
 
   $('.alert').delay(3000).fadeOut(2000);
-
   $('.notice').delay(3000).fadeOut(2000);
 
   refreshRating();
   refreshRating();
-    
-});
 
-
-
-var width = window.screen.width;
-
-
-$(document).on('turbolinks:load ajaxSuccess', function()
-
-  {if(width>800){
+  if(width>800){
 
    $('.img-zoom').elevateZoom({
     zoomType: "lens",
     lensShape: "round",
     lensSize: 150
-  });}
+  });
+  }
 
-   else{};
-
+  else{
+  };
+    
 });
+
+
+
+
+
+
+
 
 
