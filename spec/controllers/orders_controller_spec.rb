@@ -5,7 +5,7 @@ describe OrdersController, type: :controller do
 
     before do  
      # @order = FactoryGirl.build(:order)
-      @user=FactoryGirl.create(:admin)
+      @user = FactoryGirl.create(:admin)
       sign_in @user
       get :index
     end
