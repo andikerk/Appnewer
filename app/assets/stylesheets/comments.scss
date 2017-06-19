@@ -36,3 +36,9 @@
 .pagination a:active { border: 1px solid #000099; color: white; } 
 .pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #000099;             font-weight: bold; background-color: 3EA7C9; color: #FFF; } 
 .pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd; }
+
+.product-reviews p{
+	margin-top:3px;
+	margin-bottom:0px;
+	margin-left:8px;
+}

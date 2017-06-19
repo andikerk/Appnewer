@@ -2,7 +2,7 @@
 
 <% if signed_in? %>
   
-  <%= form_for([@product, @product.comments.build]) do |f| %>
+  <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
     <p id="newcommentp">
     
       <%= f.text_area :body, class:"input-form form-control",placeholder:"Add Your Comment.." %>
