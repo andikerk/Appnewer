@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-  # GET /products
-  # GET /products.json
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:show, :index]
+
+
+
   def index
 
     @products = Product.all
@@ -15,26 +18,26 @@ class ProductsController < ApplicationController
       end
   end
 
-  # GET /products/1
-  # GET /products/1.json
+  
   def show
     
     @comments = @product.comments.order("created_at  DESC").paginate(page:params[:page], per_page: 2)
 
   end
 
-  # GET /products/new
+ 
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
+ 
   def edit
+    
     @idedit = params[:idedit]
+
   end
 
-  # POST /products
-  # POST /products.json
+
   def create
     @product = Product.new(product_params)
 
@@ -49,8 +52,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
+
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -66,8 +68,7 @@ class ProductsController < ApplicationController
     
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
+
   def destroy
     @product.destroy
     respond_to do |format|
