@@ -72,3 +72,6 @@ gem 'stripe'
 group :development, :test do
   gem 'brakeman', '~> 3.6', '>= 3.6.2'
 end
+#group :production do
+ # gem 'secure_headers', '~> 2.1'
+#end
