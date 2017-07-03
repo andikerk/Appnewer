@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%#  cache @product do%>
 <div class="row" id="showprodrow">
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
 
@@ -25,6 +26,8 @@
           <strong>Price:</strong>
           <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
         </p>
+        
+<%#end%><!--end of caching-->
 
         <%if !signed_in?%>
         <button class="btn btn-default btn-info" id="buy?login!">

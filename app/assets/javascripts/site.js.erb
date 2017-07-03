@@ -19,7 +19,7 @@ var refreshRating = function(){
   });
 };
 
-var width = window.screen.width;
+//var width = window.screen.width;
 
 
 $(document).on('turbolinks:load ajaxSuccess', function() {
@@ -30,17 +30,18 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
   refreshRating();
   refreshRating();
 
-  if(width>800){
+  if(window.screen.width>800){
 
    $('.img-zoom').elevateZoom({
     zoomType: "lens",
     lensShape: "round",
     lensSize: 150
   });
+
   }
 
-  else{
-  };
+ // else{
+ // };
     
 });
 
