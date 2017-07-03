@@ -19,19 +19,19 @@ var refreshRating = function(){
   });
 };
 
-//var width = window.screen.width;
 
-
-$(document).on('turbolinks:load ajaxSuccess', function() {
+$(document).on('turbolinks:load ajaxSuccess', function(){
 
   $('.alert').delay(3000).fadeOut(2000);
   $('.notice').delay(3000).fadeOut(2000);
 
   refreshRating();
   refreshRating();
+//I guess I need it two times, since I have ratings on product index and show views
 
+// elevateZoom freezes mobile devices, so only for larger screens
+// elevateZoom is in vendor/assets
   if(window.screen.width>800){
-
    $('.img-zoom').elevateZoom({
     zoomType: "lens",
     lensShape: "round",
@@ -39,9 +39,6 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
   });
 
   }
-
- // else{
- // };
     
 });
 
