@@ -15,8 +15,6 @@ class UserMailer < ApplicationMailer
  
   def thankyou(user, product, order)
     @user = user
-    #   @id= #session[:id]
-   
     @product = product
     @order = order
     mail(to: @user.email, subject: 'Thank You for Shopping with Us!')

@@ -100,4 +100,7 @@ config.action_mailer.smtp_settings = {
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
 }
+
+config.web_socket_server_url = "wss://zweiradeins.herokuapp.com/cable"
+config.action_cable.allowed_request_origins = ['https://zweiradeins.herokuapp.com', 'http://zweiradeins.herokuapp.com']
 end

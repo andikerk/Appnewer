@@ -1,12 +1,14 @@
+
+
 <div class="product-reviews">
 
     <% @comments.each do |comment| %>
-
+ 
         <div class="reviews">
         <%= render partial: "comments/comment", locals: { comment: comment } %>
         
         </div>
-        
+       
     <% end %>
    
 </div>

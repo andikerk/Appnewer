@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%#  cache @product do%>
+<%  cache @product do%>
 <div class="row" id="showprodrow">
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
 
@@ -27,7 +27,7 @@
           <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
         </p>
         
-<%#end%><!--end of caching-->
+<%end%><!--end of caching-->
 
         <%if !signed_in?%>
         <button class="btn btn-default btn-info" id="buy?login!">
@@ -74,15 +74,17 @@
 
 
   </div>
+  <%cache  @product.image_url do%>
 
   <div class="col-sm-4 col-xs-12">
         <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail", data_zoom_image: @product.image_url, id: "showpic") %>
 
   </div>
-
+  <%end%><!--end of caching-->
   <div class="col-sm-4 col-xs-12">
 
-  
+        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+        
         <%= render 'new_comment' %>
         <%= render 'comments' %>
         
