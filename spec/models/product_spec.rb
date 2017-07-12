@@ -4,10 +4,10 @@ require  'rails_helper'
 
 	before do
 	#here you put your code to generate test content
-		#@product = Product.create!(name: "race bike", colour: "blue", price: 359, description: "wonderful vehicle", image_url: "whitebike.jpg")
+		
 		@product = FactoryGirl.create(:product)
-		#@user = User.create!(first_name: "Appel", last_name: "Undei",username: "Appel1", password: "asdfgh", email: "appel1@yahoo.com")
 		@user = FactoryGirl.create(:user)
+
 		@product.comments.create!(rating: 1, user: @user, body: "geht so")
 		@product.comments.create!(rating: 3, user: @user, body: "na ja")
 		@product.comments.create!(rating: 5, user: @user, body: "super")

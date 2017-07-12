@@ -5,20 +5,24 @@ class CommentsController < ApplicationController
 
     @product = Product.find(params[:product_id])
     @comment = @product.comments.new(comment_params)
-    logger.debug "New comment: #{@comment.attributes.inspect}"
-    logger.debug "Article should be valid: #{@comment.valid?}"
     @comment.user = current_user
-
+    @user = current_user
+    
     respond_to do |format|
       if @comment.save
-        ActionCable.server.broadcast 'product_channel', comment: @comment,
-        average_rating: @comment.product.average_rating
-        
+       # ActionCable.server.broadcast 'product_channel', comment: @comment,
+       # average_rating: @comment.product.average_rating
+       # ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
+      #ProductChannel.broadcast_to @product.id,
+       #comment: CommentsController.render(partial: 'comments/comment',
+       #locals: {comment: @comment}), average_rating: @product.average_rating
+       ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment',
+       locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating
+
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js
-        ActionCable.server.broadcast 'product_channel', comment: @comment,
-        average_rating: @comment.product.average_rating
+        
         
       else
         format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
