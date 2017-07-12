@@ -20,5 +20,9 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Thank You for Shopping with Us!')
   end
 
+  def welcome_mail(user)
+    @user = user
+  end
+
 end
 
