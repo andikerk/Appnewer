@@ -42,8 +42,9 @@
       </div>
     <%end%>
       
-    <p>average rating: <%= @product.average_rating.round(1) %> out of 5</p>       
+          
     <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    <br>
         
     <% if(@comments.count>=2)%> 
       <p> Highest rating:"<%= @product.highest_rating_comment.body%>"

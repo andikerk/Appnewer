@@ -2,15 +2,11 @@
 
 <h1 id="ourprod">Our Bikes</h1>
 <hr>
-
-
 <div class="container-fluid">
   <div class="row" id="prodindexrow">
-
     <%cache (cache_key_for_products) do %>
       <%= render @products %>
     <% end %>
-
   </div>
 </div>
 

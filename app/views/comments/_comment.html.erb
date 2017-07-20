@@ -1,4 +1,5 @@
 <div >
+
 	<hr>
 	<p id="newcommentp">
 
@@ -16,7 +17,7 @@
 			product_comment_path(comment.product, comment), method: :delete, data: {confirm: "Are you sure?"} %>
 				
 		<%end%>
-	</p>
+	  </p>
 	<div class = "rated" data-score = "<%= comment.rating%>"></div> 
 	<p> <%= comment.body%></p>
 </div>
