@@ -6,22 +6,18 @@ class OrdersController < ApplicationController
 
   def index
     if signed_in?&&current_user.admin?
-        @order = Order.all
-    
+        @order = Order.all  
     else
       redirect_to root_path, notice: "You are not authorized to access this page"
     end
   end
 
-  def show
-  
+  def show 
     @order = Order.find(params[:id])
     if @order.user == current_user
        @product = Product.find(@order.product_id)
-
     else
       redirect_to root_path, notice: "You are not authorized to access this page"
     end
   end
-
 end

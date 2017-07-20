@@ -11,10 +11,13 @@ describe Comment do
 
 	it "is valid" do
 		expect(@product.comments.new(user_id:@user.id, rating: 1, body: "poor")).to be_valid
-
 	end
 
 	it "is not valid" do
 		expect(@product.comments.new(user_id:@user.id, rating: 1, body: "")).not_to be_valid
+	end
+
+	it "is not valid" do
+		expect(@product.comments.new(user_id:@user.id, rating: "", body: "great")).not_to be_valid
 	end
 end

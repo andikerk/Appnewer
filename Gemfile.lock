@@ -4,6 +4,12 @@ GIT
   specs:
     bcrypt (3.1.11)
 
+GIT
+  remote: https://github.com/deivid-rodriguez/byebug.git
+  revision: 83505b28dea758f558bb393f9c198ad54a4b6730
+  specs:
+    byebug (9.0.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -57,6 +63,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    dalli (2.7.6)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -210,8 +217,10 @@ PLATFORMS
 DEPENDENCIES
   bcrypt!
   brakeman (~> 3.6, >= 3.6.2)
+  byebug!
   cancancan (~> 1.10)
   coffee-rails (~> 4.2)
+  dalli
   devise
   factory_girl_rails (~> 4.0)
   jbuilder (~> 2.5)

@@ -27,7 +27,7 @@ describe ProductsController, :type => :controller do
   context "PUT #update/:price" do
     before do
       @product = FactoryGirl.create(:product)
-      @user = FactoryGirl.build(:admin)
+      @user = FactoryGirl.create(:admin)
       sign_in @user
     end
 
@@ -43,7 +43,7 @@ describe ProductsController, :type => :controller do
 
     before do
       @product = FactoryGirl.create(:product)
-      @user = FactoryGirl.build(:admin)
+      @user = FactoryGirl.create(:admin)
       sign_in @user
     end
 

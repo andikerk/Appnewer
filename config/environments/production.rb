@@ -101,6 +101,16 @@ config.action_mailer.smtp_settings = {
   password: ENV["GMAIL_PASSWORD"]
 }
 
+config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     :down_retry_delay => 60
+                    }
+
 config.web_socket_server_url = "wss://zweiradeins.herokuapp.com/cable"
 config.action_cable.allowed_request_origins = ['https://zweiradeins.herokuapp.com', 'http://zweiradeins.herokuapp.com']
 end

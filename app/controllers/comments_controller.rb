@@ -10,35 +10,25 @@ class CommentsController < ApplicationController
     
     respond_to do |format|
       if @comment.save
-       # ActionCable.server.broadcast 'product_channel', comment: @comment,
-       # average_rating: @comment.product.average_rating
-       # ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
-      #ProductChannel.broadcast_to @product.id,
-       #comment: CommentsController.render(partial: 'comments/comment',
-       #locals: {comment: @comment}), average_rating: @product.average_rating
+      
        ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment',
        locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating
 
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js
-        
-        
+             
       else
         format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-
     end
-
   end
-
-
-  	
+ 	
   def index
   	  @comments = Comment.all.order("created_at DESC")	
       #@comments = Comment.all.order("comment.length DESC")  
-     # Comment.first.highest_rating_comment
+      #Comment.first.highest_rating_comment
   end
 
   def destroy
@@ -47,8 +37,6 @@ class CommentsController < ApplicationController
       @comment.destroy
       redirect_to product
   end
-
-
 
 
 	private

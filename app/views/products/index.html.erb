@@ -7,11 +7,10 @@
 <div class="container-fluid">
   <div class="row" id="prodindexrow">
 
-    <%# @products.each do |product| %>
-    <%#cache (cache_key_for_products) do %>
+    <%cache (cache_key_for_products) do %>
       <%= render @products %>
-    <%# end %>
-    <%# end %>
+    <% end %>
+
   </div>
 </div>
 

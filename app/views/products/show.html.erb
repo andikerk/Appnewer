@@ -1,87 +1,76 @@
 <p id="notice"><%= notice %></p>
-
-<%#  cache @product do%>
+<% cache @product do %>
 <div class="row" id="showprodrow" data-product-id="<%=@product.id %>">
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
 
-        <h3>  
-          <strong><%= @product.name %></strong>
-        </h3>
+    <h3>  
+      <strong><%= @product.name %></strong>
+    </h3>
 
-        <p>
-          <strong><%= @product.description %></strong>
-        </p>
+    <p>
+      <strong><%= @product.description %></strong>
+    </p>
 
-        <p>
-          <strong>Wheelsize:</strong>
+    <p>
+      <strong>Wheelsize:</strong>
+      <%= @product.wheelsize %>
+    </p>
 
-          <%= @product.wheelsize %>
-        </p>
+    <p>
+      <strong>Colour:</strong>
+      <%= @product.colour %>
+    </p>
 
-        <p>
-          <strong>Colour:</strong>
-          <%= @product.colour %>
-        </p>
-        <p>
-          <strong>Price:</strong>
-          <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
-        </p>
-        
-<%#end%><!--end of caching-->
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
+    </p>
+<% end %> <!--end of caching-->
+    <%if !signed_in?%>
+      <button class="btn btn-default btn-info" id="buy?login!">
+        <%=link_to "Buy? Login!", new_user_session_path %>
+      </button>
+    <%end%>
 
-        <%if !signed_in?%>
-        <button class="btn btn-default btn-info" id="buy?login!">
-          <%=link_to "Buy? Login!", new_user_session_path %>
-        </button>
-        <%end%>
-        <%if signed_in?%>
-        <div id="stripebtn">
-          <%= form_tag "/payments/create" do %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-          <%end%> 
-        </div>
-        <%end%>
-                <%#dummy = "comments"%>
-                <%# if(@comments.count==1) then
-                dummy = "comment" end%>
-
-         <p> <%#=@comments.count%> <%#=dummy%> average rating: <%= @product.average_rating.round(1) %> out of 5</p>
+    <%if signed_in?%>
+      <div id="stripebtn">
+        <%= form_tag "/payments/create" do %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%end%> 
+      </div>
+    <%end%>
           
-          <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+    <p>average rating: <%= @product.average_rating.round(1) %> out of 5</p>       
+    <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
         
-
-
-          <% if(@comments.count>=2)%>
-              
-              <p> Highest rating:"<%= @product.highest_rating_comment.body%>"
-              <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
-              <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
-              <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
-          <%end%>
-
-
+    <% if(@comments.count>=2)%> 
+      <p> Highest rating:"<%= @product.highest_rating_comment.body%>"
+      <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
+      <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
+      <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
+    <%end%>
   </div>
-  <%#cache  @product.image_url do%>
+
+<% cache @product.image_url do %>
 
   <div class="col-sm-4 col-xs-12">
-        <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail", data_zoom_image: @product.image_url, id: "showpic") %>
-
+        <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail",
+        data_zoom_image: @product.image_url, id: "showpic") %>
   </div>
-  <%#end%><!--end of caching-->
+<% end %><!--end of caching-->  
   <div class="col-sm-4 col-xs-12">
 
-        <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 
-        <%= render 'new_comment' %>
-        <%= render 'comments' %>
-        
-
+      <%= render 'new_comment' %>
+      <%= render 'comments' %>
   </div>
-</div>
-        <% if signed_in? && current_user.admin? %>
-        <%= link_to 'Edit', edit_product_path(@product) %> 
+
+  <% if signed_in? && current_user.admin? %>
+    <p> <%= link_to 'Edit', edit_product_path(@product) %> 
         <%= link_to 'Back', products_path %>
         <%= link_to 'New Product', new_product_path %>
-        <%end%>
-
+    </p>
+  <%end%>
+</div>

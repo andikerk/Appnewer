@@ -42,10 +42,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-#group  :development, :test do
+group  :development, :test do
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-#gem 'byebug', github: 'deivid-rodriguez/byebug', platform: [:mri, :mingw, :x64_mingw]
-#end
+gem 'byebug', github: 'deivid-rodriguez/byebug', platform: [:mri, :mingw, :x64_mingw]
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -75,4 +75,4 @@ end
 #group :production do
  # gem 'secure_headers', '~> 2.1'
 #end
-#gem 'dalli'
+gem 'dalli'

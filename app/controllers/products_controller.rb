@@ -4,8 +4,6 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource  only:  [:show, :index]
 
-
-
   def index
 
     @products = Product.all
@@ -19,24 +17,16 @@ class ProductsController < ApplicationController
   end
 
   
-  def show
-    
+  def show  
     @comments = @product.comments.order("created_at  DESC").paginate(page:params[:page], per_page: 2)
-
   end
 
- 
   def new
     @product = Product.new
   end
 
- 
-  def edit
-    
-    @idedit = params[:idedit]
-
+  def edit  
   end
-
 
   def create
     @product = Product.new(product_params)
@@ -52,7 +42,6 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -62,12 +51,8 @@ class ProductsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
-
-    end
-        
-    
+    end  
   end
-
 
   def destroy
     @product.destroy
