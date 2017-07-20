@@ -25,6 +25,7 @@
       <strong>Price:</strong>
       <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
     </p>
+    <% @product.average_rating %>
 <% end %> <!--end of caching-->
     <%if !signed_in?%>
       <button class="btn btn-default btn-info" id="buy?login!">
@@ -40,7 +41,7 @@
         <%end%> 
       </div>
     <%end%>
-          
+      
     <p>average rating: <%= @product.average_rating.round(1) %> out of 5</p>       
     <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
         
@@ -63,8 +64,8 @@
 
       <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 
-      <%= render 'new_comment' %>
-      <%= render 'comments' %>
+      <%= render partial:'new_comment' %>
+      <%= render partial:'comments' %>
   </div>
 
   <% if signed_in? && current_user.admin? %>
