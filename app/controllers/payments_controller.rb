@@ -27,6 +27,6 @@ before_action :authenticate_user!
 				err  = body[:error]
 				flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
 				redirect_to product_path
-			end
-  end  	
+		end
+  	end  	
 end
