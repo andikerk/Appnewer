@@ -59,15 +59,13 @@
   <div class="col-sm-4 col-xs-12">
         <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail",
         data_zoom_image: @product.image_url, id: "showpic") %>
-
-        <h6>Views:  
-          <span class="badge">
-            <%= @product.views%> 
-          </span> 
-        </h6> 
-
+<% end %><!--end of caching--> 
+    <h6>Views:  
+      <span class="badge"><%= @product.views%></span> 
+    </h6>    
   </div>
-<% end %><!--end of caching-->  
+ 
+       
   <div class="col-sm-4 col-xs-12">
 
       <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
