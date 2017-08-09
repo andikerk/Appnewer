@@ -14,15 +14,20 @@
 	margin-left:0px;
 	margin-right:0px;
 }
+
 #prodcont{
-	border:0.01px solid linen;
-	margin:0px;
+	border:1px solid darkred;
+	margin:0;
 	padding:5px;
+	border-radius:5px;
 }
 #prodname{
 	font-size:1.4em;
 	text-align:center;
 	margin:10px;
+}
+#proddescr{
+	height:3em;
 }
 #proddescr,#prodcol,#prodwheelsz,#SED{
 	margin:7px;

@@ -25,8 +25,9 @@
       <strong>Price:</strong>
       <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
     </p>
-    <% @product.average_rating %>
 <% end %> <!--end of caching-->
+    <% @product.average_rating %>
+
     <%if !signed_in?%>
       <button class="btn btn-default btn-info" id="buy?login!">
         <%=link_to "Buy? Login!", new_user_session_path %>
