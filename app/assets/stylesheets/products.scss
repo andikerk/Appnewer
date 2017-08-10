@@ -21,6 +21,12 @@
 	padding:5px;
 	border-radius:5px;
 }
+.row.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 #prodname{
 	font-size:1.4em;
 	text-align:center;

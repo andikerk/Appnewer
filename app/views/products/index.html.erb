@@ -2,11 +2,18 @@
 
 <h1 id="ourprod">Our Bikes</h1>
 <hr>
+
+
+
+<%#= select_tag( :product_price , '<option value="price desc">price desc</option><option value="price asc">price asc</option>'.html_safe) %>
+    
 <div class="container-fluid">
-  <div class="row " id="prodindexrow">
+  <div class="row row-eq-height" id="prodindexrow">
+
     <%#cache (cache_key_for_products) do %>
-      <%= render @products %>
+      <%= render @products.order(price: :asc) %>
     <%# end %>
+
   </div>
 </div>
 
