@@ -20,12 +20,22 @@ var refreshRating = function(){
 };
 
 
+
+
+
+
 $(document).on('turbolinks:load ajaxSuccess', function(){
 
   $('.alert').delay(3000).fadeOut(2000);
   $('.notice').delay(3000).fadeOut(2000);
 
   refreshRating();
+
+  var heights = $(".row > div").map(function() {
+    return $(this).height();
+}).get();
+maxHeight = Math.max.apply(null, heights);
+$(".row > div").height(maxHeight);
  
 
 // elevateZoom freezes mobile devices, so only for larger screens
