@@ -31,20 +31,20 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 
   refreshRating();
 
- /* var heights = $(".row > div").map(function() {
+    var heights = $(".row > div").map(function() {
     return $(this).height();}).get();
     maxHeight = Math.max.apply(null, heights);
   $(".row > div").height(maxHeight);
-  window.onresize = function(){location.reload();} */
+  window.onresize = function(){location.reload();} 
 
-  $(function() {
+/*  $(function() {
   $('.row > div').matchHeight({
-    byRow: true,
+    byRow: false,
     property: 'height',
     target: null,
     remove: false
 });
-});
+});*/
 
 
 // elevateZoom freezes mobile devices, so only for larger screens
