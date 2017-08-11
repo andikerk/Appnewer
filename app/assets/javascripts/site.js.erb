@@ -36,7 +36,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 }).get();
 maxHeight = Math.max.apply(null, heights);
 $(".row > div").height(maxHeight);
- 
+window.onresize = function(){ location.reload(); } 
 
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
