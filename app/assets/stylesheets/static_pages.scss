@@ -4,9 +4,9 @@
 
 //------------------------------application.html.erb-----------------------------------//
 
-*{
-	border: 1px solid red;
-}
+//*{
+//	border: 1px solid red;
+//}
 body{
 	margin-top:50px;
 	margin-bottom:0;
@@ -45,8 +45,6 @@ footer{
 	float:right;
 	margin:auto;
 	width:180px;
-	
-
 }
 //---------------------------------landing_page---------------------------------------//
 
@@ -89,8 +87,7 @@ footer{
 .nav li> a:hover{
 	text-decoration:underline;
 	font-weight:590;
-	transition:1s;
-	
+	transition:1s;	
 }
 .navbar-inverse .navbar-toggle{
 	margin-right:25px;

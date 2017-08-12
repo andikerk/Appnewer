@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   skip_authorize_resource  only:  [:show, :index]
 
   def index
-    @sortBy = [price: :asc]
+    
     @products = Product.all
 
       if params[:q]
