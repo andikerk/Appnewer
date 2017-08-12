@@ -1,5 +1,5 @@
 <div id="prodcont" class="col-md-2 col-sm-3 col-xs-6 ">
-	
+	<div id="innerprodcont">
 	  <h3 id="prodname"><%= product.name %></h3>
 	  <p id="proddescr"><%= product.description %></p>
 	  <%= link_to image_tag(product.image_url, class: "img-responsive img-thumbnail", id:"prodpic"), product %>
@@ -8,6 +8,6 @@
 	  <p id="prodid">ID:<%= product.id %></p>
 	  <p id="prodwheelsz">Wheelsize <%= product.wheelsize %></p>
 	  <p id="SED"><%= link_to 'See Details', product %></p> 
-
+	</div>
 </div>
 

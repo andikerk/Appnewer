@@ -6,7 +6,7 @@
 -------------------index view--------------------------------------
 
 .container-fluid{
-	padding:0;
+	
 }
 #ourprod{
 	font-weight:700;
@@ -21,14 +21,17 @@
 	border-bottom:1px solid black;
 }
 #prodindexrow{
-	margin-left:0;
-	margin-right:0;
+	margin-left:-7;
+	margin-right:-7;
 }
 #prodcont{
+	padding:0;
+}
+#innerprodcont{
 	border:4px groove lightgray;
-	margin:0;
 	padding:5px;
 	border-radius:5px;
+	margin:2px;
 }
 ----------------------------------------show view----------------------------------------
 #prodname{
