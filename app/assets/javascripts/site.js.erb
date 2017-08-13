@@ -19,7 +19,24 @@ var refreshRating = function(){
   });
 };
 
-
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#358c5c"
+    },
+    "button": {
+      "background": "transparent",
+      "text": "#afed71",
+      "border": "#afed71"
+    }
+  },
+  "position": "bottom-left",
+  "content": {
+   // "message": "Diese Seite benutzt Kekse, um Ihnen ein optimales Erlebnis zu verschaffen\n\n\n"
+  }
+})});
 
 
 
@@ -52,6 +69,9 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   });
 
   }
+
+
+
     
 });
 
