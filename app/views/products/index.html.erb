@@ -3,7 +3,7 @@
 <h1 id="ourprod">Our Bikes</h1>
 
 	<%= form_tag("/products", method: "get",type:"num", id:"select") do %>
-	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, id: "numberfield") %>. 
+	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100,:onchange =>"this.form.submit();", id: "numberfield") %>. 
 		Show by 
 
 		<%= select_tag(:a, options_for_select([['name asc', 1],
