@@ -9,6 +9,19 @@ class ProductsController < ApplicationController
     @products = Product.all
     @a = params[:a]
 
+    if params[:maxamount]
+      @maxamount = params[:maxamount].to_i*100
+    else
+      @maxamount = 10000000000
+  end
+ 
+
+ 
+
+
+
+
+
       if params[:q]
         search_term = params[:q]
         @products = Product.search(search_term)
