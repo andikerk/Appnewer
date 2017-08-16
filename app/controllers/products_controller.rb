@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     if params[:maxamount]
       @maxamount = params[:maxamount].to_i*100
     else
-      @maxamount = 10000000000
+      @maxamount = Product.order(price: :desc).first.price + 100
   end
  
 
