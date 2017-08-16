@@ -22,15 +22,17 @@
 }
 #selector{
 	background-color:pink;
-	height:35px;
+	height:32px;
 	text-align:center;
 	border-radius:5px;
-	width:250px;
+	width:200px;
 	margin:auto;
 	margin-bottom:15px;
 }
 #selectorTag{
 	height:22px;
+	border:1px solid black;
+	margin-top:5px;
 }
 #prodindexrow{
 	margin-left:-7;
@@ -46,11 +48,7 @@
 	margin:2px;
 }
 ----------------------------------------show view----------------------------------------
-#prodname{
-	font-size:1.4em;
-	text-align:center;
-	margin:10px;
-}
+
 #proddescr{
 	height:3em;
 }
@@ -115,4 +113,13 @@
 	margin-left:8px;
 	margin-top:15px;
 	margin-bottom:25px;
+}
+#prodname{
+	font-size:1,7em;
+	font-weight:600;
+	font-family:serif;
+	font-style:italic;
+	text-align:center;
+	margin:10px;
+
 }

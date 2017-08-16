@@ -11,9 +11,9 @@
 	<p id="selector" >Show By
 		<%= select_tag(:a, options_for_select([['name asc', 1],
 			['name desc', 2], ['price asc', 3], ['price desc', 4]],
-			:selected => params[:a]),id:"selectorTag")%>
+			:selected => params[:a]),:onchange =>"this.form.submit();",id:"selectorTag")%>
 								
-		<%= submit_tag "Go!",class:"btn btn-default btn-danger"  %>
+		<%#= submit_tag "Go!",class:"btn btn-default btn-danger"  %>
 	</p>
 <% end %>
 
