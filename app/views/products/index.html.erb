@@ -1,17 +1,38 @@
 
 
 <h1 id="ourprod">Our Bikes</h1>
-<hr>
 
 
 
-<%#= select_tag( :product_price , '<option value="price desc">price desc</option><option value="price asc">price asc</option>'.html_safe) %>
-    
+
+
+<%= form_tag("/products", method: "get",type:"num", id:"select") do %>
+
+	<p id="selector" >Show By
+		<%= select_tag(:a, options_for_select([['name asc', 1],
+			['name desc', 2], ['price asc', 3], ['price desc', 4]],
+			:selected => params[:a]),id:"selectorTag")%>
+								
+		<%= submit_tag "Go!",class:"btn btn-default btn-danger"  %>
+	</p>
+<% end %>
+
 <div class="container-fluid">
   <div class="row" id="prodindexrow">
 
     <%#cache (cache_key_for_products) do %>
+
+      <%if @a == '1'%>
+      <%= render @products.order(name: :asc) %>
+      <% elsif @a == '2'%>
+      <%= render @products.order(name: :desc) %>
+      <%elsif @a == '3'%>
       <%= render @products.order(price: :asc) %>
+      <%elsif @a == '4'%>
+      <%= render @products.order(price: :desc) %>
+      <%else%>
+      <%= render @products %>
+      <%end %>
     <%# end %>
 
   </div>

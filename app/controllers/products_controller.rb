@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   def index
     
     @products = Product.all
+    @a = params[:a]
 
       if params[:q]
         search_term = params[:q]
@@ -14,6 +15,8 @@ class ProductsController < ApplicationController
       else
         @products = Product.all
       end
+
+
   end
 
   
@@ -73,4 +76,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :price, :colour, :wheelsize)
     end
+
 end
