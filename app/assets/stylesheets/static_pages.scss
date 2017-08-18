@@ -7,6 +7,12 @@
 //*{
 //	border: 1px solid red;
 //}
+.cc-link{
+	margin-left:10vw ;
+}
+.cc-message{
+	background-color:red;
+}
 body{
 	margin-top:50px;
 	margin-bottom:0;
@@ -24,28 +30,34 @@ body{
 }
 footer{
 	height:50px;
-	background-color:lightgray;
+	background-color:#1A8A7D;
 	margin:0px;
 }
+
 #cright{
-	text-align:right;
+	text-align:center;
 	padding-top:5px;
 	margin:0;
-	font-size:.8em;
+	margin-top:10px;
+	font-size:1em;
+	font-weight:600;
 	float:left;
-	margin:auto;
-	width:150px;	
+	width:150px;
+	
 }
 
 #imprint{
-	text-align:left;
+	text-align:center;
 	padding-top:5px;
 	margin:0;
-	font-size:.8em;
+	margin-top:10px;
+	font-size:1em;
+	font-weight:600;
 	float:right;
-	margin:auto;
-	width:180px;
+	width:100px;
+
 }
+
 //---------------------------------landing_page---------------------------------------//
 
 #landhead{

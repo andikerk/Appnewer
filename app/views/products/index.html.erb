@@ -2,13 +2,11 @@
 
 <h1 id="ourprod">Our Bikes</h1>
 
-	<%= form_tag("/products", method: "get",type:"num", id:"select") do %>
-	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100,:onchange =>"this.form.submit();", id: "numberfield") %>. 
-		Show by 
-
+<%= form_tag("/products", method: "get",type:"num", id:"select") do %>
+	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, onchange:"this.form.submit();", id: "numberfield") %>. Show by 
 		<%= select_tag(:a, options_for_select([['name asc', 1],
 		['name desc', 2], ['price asc', 3], ['price desc', 4]],
-		:selected => params[:a]),:onchange =>"this.form.submit();",id:"selectorTag")%>
+		selected: params[:a]), onchange: "this.form.submit();",id:"selectorTag")%>
 	</p>
 <% end %>
 
@@ -16,6 +14,8 @@
   <div class="row" id="prodindexrow">
 
     <%#cache (cache_key_for_products) do %>
+
+    <%# @products = @products.where("name = 'Wanda' OR name = 'Gabi'") %>
     <% @products =  @products.where("price < #{@maxamount}")%>
  
       <% if @a == '1'%>
@@ -26,12 +26,14 @@
       <%= render @products.order(price: :asc) %>
       <%elsif @a == '4'%>
       <%= render @products.order(price: :desc) %>
-      <%else%>
-      <%= render @products %>
+      <%#else%>
+      <%#= render @products %>
       <%end %>
     <%# end %>
 
   </div>
 </div>
+
+
 
 

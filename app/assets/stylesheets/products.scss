@@ -31,11 +31,15 @@
 }
 #numberfield{
 	width:60px;
+	height:22px;
+	border:4px ridge lightgray;
+	border-radius:5px;
 }
 #selectorTag{
 	height:22px;
-	border:1px solid black;
+	border:4px ridge lightgray;
 	margin-top:5px;
+	border-radius:5px;
 }
 #prodindexrow{
 	margin-left:-7;
@@ -43,34 +47,37 @@
 }
 #prodcont{
 	padding:0;
+	z-index:1;
 }
 #innerprodcont{
 	border:4px groove lightgray;
 	padding:5px;
 	border-radius:5px;
 	margin:2px;
+	z-index:1;
 }
+
+
 ----------------------------------------show view----------------------------------------
 
 #proddescr{
 	height:3em;
 }
 #proddescr,#prodcol,#prodwheelsz,#SED{
-	margin:7px;
+	margin-top:7px;
+	margin-bottom:7px;
 	font-size:10px;
 	line-height:14px;
 }
-#proddescr{
-	margin-left:0;
-	margin-right:0;
-}
-#prodpic{
+
+.prodpic{
 	width:100%;
 	height:auto;
 	display:block;
 	margin-bottom:10px;
 
 }
+
 #prodprice{
 	width:75px;
 	display:block;
@@ -120,7 +127,7 @@
 	margin-top:15px;
 	margin-bottom:25px;
 }
-#prodname{
+.prodname{
 	font-size:1,7em;
 	font-weight:600;
 	font-family:serif;

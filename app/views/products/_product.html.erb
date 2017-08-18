@@ -1,8 +1,8 @@
 <div id="prodcont" class="col-md-2 col-sm-3 col-xs-6 ">
 	<div id="innerprodcont">
-	  <h3 id="prodname"><%= product.name %></h3>
+	  <h3 class="prodname"><%= product.name %></h3>
 	  <p id="proddescr"><%= product.description %></p>
-	  <%= link_to image_tag(product.image_url, class: "img-responsive img-thumbnail", id:"prodpic"), product %>
+	  <%= link_to image_tag(product.image_url, class: "img-responsive img-thumbnail prodpic"), product %>
 	  <p id="prodprice"><%= number_to_currency(product.price.to_d/100,unit:"€") %></p>
 	  <p id="prodcol"><%= product.colour %></p>
 	  <p id="prodid">ID:<%= product.id %></p>

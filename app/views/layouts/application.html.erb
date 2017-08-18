@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<link rel="icon" href="/assets/favicon1.ico">
     <title>zweiradeins</title>
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -122,8 +122,7 @@
 	<footer >
 		
 	    <%= link_to static_pages_contact_path do%><p id="cright"> &copy; 1815 Bike Berlin</p><%end%>
- 		<%= link_to static_pages_imprint_path do%><p id= "imprint"> imprint/terms & conditions</p><%end%>
-	<%if signed_in? %>   	<%=current_user.id%> <%end%><%= session[:id]%>
+ 		<%= link_to static_pages_imprint_path do%><p id= "imprint">legal</p><%end%>
 	</footer>
   </body> 
 </html>

@@ -23,19 +23,18 @@ window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
-      "background": "#216942",
-      "text": "#358c5c"
+      "background": "#1d8a8a",
+      "text": "#62ffaa"
     },
     "button": {
       "background": "transparent",
       "text": "#afed71",
       "border": "#afed71"
     }
-  },
-  "position": "bottom-left",
-  "content": {
-   // "message": "Diese Seite benutzt Kekse, um Ihnen ein optimales Erlebnis zu verschaffen\n\n\n"
-  }
+  }, 
+  "content": {"message":"_! K E K S E A L A R M K E K S E A L A R M !_", "dismiss": "KAPIERT!",
+    "link": "KEKSEWEITERBILDUNG"
+  },"theme": "classic"
 })});
 
 
@@ -49,6 +48,8 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   refreshRating();
 
 
+
+
   $(function() {
   $('.row > #prodcont > #innerprodcont').matchHeight({
     byRow: false,
@@ -58,7 +59,17 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 });
 });
 
+/*  $('.prodpic').mouseenter(function(){
+    $(this).css("transform","scale(1.1)");
+  });
+  $('.prodpic').mouseleave(function(){
+    $(this).css("transform","scale(1)");
+  });
 
+  $('.prodname').mouseleave(function(){
+    $(this).html("<b>Hello world!</b>");
+  });
+*/
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
   if(window.screen.width>800){
