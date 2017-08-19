@@ -1,7 +1,7 @@
 
 
 <h1 id="ourprod">Our Bikes</h1>
-<%= @a %>
+
 
 <%= form_tag("/products", method: "get",type:"num", id:"select") do %>
 	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, onchange:"this.form.submit();", id: "numberfield") %>. Show by 
@@ -27,8 +27,8 @@
       <%= render @products.order(price: :asc) %>
       <%elsif @a == '4'%>
       <%= render @products.order(price: :desc) %>
-      <%#else%>
-      <%#= render @products %>
+      <%else%>
+      <%= render @products %>
       <%end %>
     <%# end %>
 

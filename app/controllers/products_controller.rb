@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
     if params[:a]
       @a= params[:a]
-    else @a = 4;
+    
     end
     
     
