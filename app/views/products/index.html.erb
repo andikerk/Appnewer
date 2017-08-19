@@ -1,13 +1,13 @@
 
 
 <h1 id="ourprod">Our Bikes</h1>
-<%= params[:a] %>
+<%= @a %>
 
 <%= form_tag("/products", method: "get",type:"num", id:"select") do %>
 	<p id="selector" > Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, onchange:"this.form.submit();", id: "numberfield") %>. Show by 
 		<%= select_tag(:a, options_for_select([['name asc', 1],
 		['name desc', 2], ['price asc', 3], ['price desc', 4]],
-		selected: '3'), onchange: "this.form.submit();",id:"selectorTag")%>
+		selected:@a), onchange: "this.form.submit();",id:"selectorTag")%>
 	</p>
 <% end %>
 
@@ -18,7 +18,6 @@
 
     <%# @products = @products.where("name = 'Wanda' OR name = 'Gabi'") %>
     <% @products =  @products.where("price < #{@maxamount}")%>
-     <% if params[:a] then @a = params[:a] else @a = '4' end %>
  
       <% if @a == '1'%>
       <%= render @products.order(name: :asc) %>
