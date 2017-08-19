@@ -42,8 +42,8 @@ footer{
 	font-size:1em;
 	font-weight:600;
 	float:left;
-	width:150px;
-	
+	width:180px;
+	text-shadow: 0px 0px 6px white;
 }
 
 #imprint{
@@ -55,7 +55,7 @@ footer{
 	font-weight:600;
 	float:right;
 	width:100px;
-
+	text-shadow: 0px 0px 6px white;
 }
 
 //---------------------------------landing_page---------------------------------------//
@@ -65,11 +65,41 @@ footer{
 	text-align:center;
 	margin-top:70px;
 }
-
+#landhead{
+	color:white;
+	font-weight:900;
+	font-style: italic;
+	font-family:serif;
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:0;
+	padding:.5em;
+	text-shadow:  -5px -5px 20px red;
+	background-color:#DB7B3B;
+	border-top:5px ridge lightblue;
+	
+}
+#carouselcont{
+	border: 2px solid black;
+}
+#carouselneighbor{
+	border:2px solid green;
+	background:green;
+}
 #slide{
 	display:block;
 	margin:auto;
+
+	
 }
+.carousel.slide{
+	background:linear-gradient(#DB7B3B,#1A8A7D);
+}
+.carousel-control{
+
+}
+
+
 #prodpricel{
 	font-size:1.7em;
 	font-weight:700;
