@@ -6,8 +6,10 @@ class ProductsController < ApplicationController
 
   def index
     
-    @products = Product.all
+    @products = Product.all  
+    
     @a = params[:a]
+    
 
     if params[:maxamount]
       @maxamount = params[:maxamount].to_i*100
