@@ -4,25 +4,21 @@
 
 
 -------------------index view--------------------------------------
-main{
-background-color:yellow;}
-/*#indexback{ 
-	background-color:yellow;
+ahmmain{}
 
-	
-}*/
 #ourprod{
 	color:white;
 	font-weight:900;
 	font-style: italic;
 	font-family:serif;
+	letter-spacing:.25em;
 	text-align:center;
-	margin-top:70px;
+	margin-top:50px;
 	margin-bottom:10px;
 	padding:.5em;
 	text-shadow:  -5px -5px 20px red;
 	background-color:#DB7B3B;
-	border-top:5px ridge lightblue;
+	
 	border-bottom:1px solid lightblue;
 }
 #selector{
@@ -49,30 +45,60 @@ background-color:yellow;}
 #prodindexrow{
 	margin-left:-7;
 	margin-right:-7;
+	background-color:lightyellow;
 }
 #prodcont{
 	padding:0;
-	z-index:1;
 }
 #innerprodcont{
 	border:4px groove lightgray;
 	padding:5px;
 	border-radius:5px;
 	margin:2px;
-	z-index:1;
+}
+#paginatediv{
+	background-color:#85BF2E;
+	margin-top:5px;
+	margin-bottom:15px;
+	padding-left:20px;
+}
+#pagecontrol a ,#pagecontrol span {
+	
+	color:lightyellow;
+	border-radius:5px;
+	font-size:1em;
+	font-weight:500;
+}
+#pagecontrol .current{
+	background-color:lightyellow;
+	font-size:1em;
+	font-weight:700;
+	border-radius:5px;
+	color:green;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:3px;
+	padding-bottom:3px;
 }
 
-
-----------------------------------------show view----------------------------------------
-
-#proddescr{
-	height:3em;
+---------------------------------------_product partial----------------------------------------
+*{
+	border: 1px solid red;
 }
+
 #proddescr,#prodcol,#prodwheelsz,#SED{
 	margin-top:7px;
 	margin-bottom:7px;
-	font-size:10px;
-	line-height:14px;
+	margin-left:0;
+	margin-right:0;
+	font-size:1em;
+	
+}
+#proddescr{
+	height:4em;
+	overflow-y:auto;
+	background-color:white;
+
 }
 
 .prodpic{
@@ -120,11 +146,10 @@ background-color:yellow;}
 	margin-right:0px;
 }
 
-#prodshowdescr p, h3{
-	margin:8px;
+#prodshowdescr p{
+	margin:0px;
 	font-style:italic;
 	font-family:serif;
-
 }
 
 #stripebtn{
@@ -139,5 +164,4 @@ background-color:yellow;}
 	font-style:italic;
 	text-align:center;
 	margin:10px;
-
 }

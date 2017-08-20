@@ -34,7 +34,8 @@
 
 	  </div>
 	</div>
-
-	<%= will_paginate @products,  previous_label: "back", next_label: "next" %>
+	<div id = 'paginatediv'>
+		<span><%= will_paginate @products,  previous_label: "previous", next_label: "next", id:"pagecontrol" %></span>
+	</div>
 </div>
 

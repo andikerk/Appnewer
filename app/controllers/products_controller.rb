@@ -7,28 +7,28 @@ class ProductsController < ApplicationController
   def index
     
     @products = Product.all  
-
+#----------------------------sort by-----------------
     if params[:a]
       @a= params[:a]
     
     end
     
     
-
+#---------------------max amount to spend------------------------
     if params[:maxamount]
       @maxamount = params[:maxamount].to_i*100
     else
       @maxamount = Product.order(price: :desc).first.price + 100
     end
  
-
+#--------------------------------search by letter--------------------------
     if params[:q]
       search_term = params[:q]
       @products = Product.search(search_term)
     else
       @products = Product.all
     end
-
+#---------------------------paginate products----------------------
     @products = @products.paginate(page:params[:page], per_page:6)
   end
 
