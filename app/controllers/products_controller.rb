@@ -7,10 +7,11 @@ class ProductsController < ApplicationController
   def index
     
     @products = Product.all  
-#----------------------------sort by-----------------
-    if params[:a]
-      @a= params[:a]
-    
+#----------------------------order by-----------------
+    if params[:orderBy]
+      @orderBy= params[:orderBy]
+    else
+      @orderBy = [name: :asc]
     end
     
     
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
 #---------------------------paginate products----------------------
-    @products = @products.paginate(page:params[:page], per_page:6)
+    @products = @products.paginate(page:params[:page], per_page:6).order( @orderBy).where("price < #{@maxamount}")
   end
 
   

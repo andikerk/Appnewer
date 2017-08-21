@@ -37,6 +37,15 @@ window.cookieconsent.initialise({
   }*/,"theme": "classic"
 })});
 
+/*$('document').on('turbolinks:load', function() {
+    var heights = $('.row > #prodcont > #innerprodcont').map(function() {
+        return $(this).height();
+    }).get(),
+
+    maxHeight = Math.max.apply(null, heights);
+
+    $('.row > #prodcont > #innerprodcont').height(maxHeight);
+});*/
 
 
 
@@ -52,7 +61,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 
   $(function() {
   $('.row > #prodcont > #innerprodcont').matchHeight({
-    byRow: false,
+    byRow: true,
     property: 'height',
     target: null,
     remove: false

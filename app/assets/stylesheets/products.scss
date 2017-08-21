@@ -42,20 +42,28 @@ ahmmain{}
 	margin-top:5px;
 	border-radius:5px;
 }
+#selectorTag option{
+}
+
 #prodindexrow{
 	margin-left:-7;
 	margin-right:-7;
 	background-color:lightyellow;
+
 }
 #prodcont{
 	padding:0;
+
+
 }
 #innerprodcont{
 	border:4px groove lightgray;
 	padding:5px;
 	border-radius:5px;
 	margin:2px;
+
 }
+
 #paginatediv{
 	background-color:#85BF2E;
 	margin-top:5px;
