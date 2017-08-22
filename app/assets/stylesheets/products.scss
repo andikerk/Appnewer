@@ -111,7 +111,7 @@ ahmmain{}
 }
 #pagecontrol .current{
 	background-color:lightyellow;
-	font-size:1em;
+	font-size:1.1em;
 	font-weight:700;
 	border-radius:5px;
 	color:green;
@@ -120,6 +120,7 @@ ahmmain{}
 	padding-top:3px;
 	padding-bottom:3px;
 }
+
 
 ---------------------------------------_product partial----------------------------------------
 *{
@@ -147,12 +148,14 @@ ahmmain{}
 	display:block;
 	margin-bottom:10px;
 
+
 }
 
 #prodprice{
 	width:75px;
 	display:block;
 	margin:auto;
+	margin-top:5px;
 	padding:1px;	
 	font-weight:700;
 	background-color:#F08011;
