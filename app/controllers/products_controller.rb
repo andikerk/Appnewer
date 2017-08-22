@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
   def index
     
     @products = Product.all  
+
+    @men = params[:men]
+    @women = params[:women]
+    @children = params[:children]
+
 #----------------------------order by-----------------
     if params[:orderBy]
       @orderBy= params[:orderBy]
@@ -19,7 +24,8 @@ class ProductsController < ApplicationController
     if params[:maxamount]
       @maxamount = params[:maxamount].to_i*100
     else
-      @maxamount = Product.order(price: :desc).first.price + 100
+     # @maxamount = Product.order(price: :desc).first.price + 100
+     @maxamount = Product.maximum('price') + 100
     end
  
 #--------------------------------search by letter--------------------------
