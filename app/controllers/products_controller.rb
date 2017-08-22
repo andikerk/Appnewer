@@ -36,7 +36,11 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
 #---------------------------paginate products----------------------
-    @products = @products.paginate(page:params[:page], per_page:6).order( @orderBy).where("price < #{@maxamount}")
+    if !@men&&!@women&&!@children
+      @products = @products.paginate(page:params[:page], per_page:6).order( @orderBy).where("price < #{@maxamount}")
+    else
+      @products = @products.paginate(page:params[:page], per_page:6).where("category = '#{@men}' OR category = '#{@women}'OR category = '#{@children}'").order( @orderBy).where("price < #{@maxamount}")
+    end 
   end
 
   
@@ -94,7 +98,7 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :price, :colour, :wheelsize)
+      params.require(:product).permit(:name, :description, :image_url, :price, :colour, :wheelsize, :category)
     end
 
 end

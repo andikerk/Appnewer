@@ -3,13 +3,12 @@
 <h1 id="ourprod">Our Bikes</h1>
 
 <div  id="select" class="container-fluid">
-<%#= @men%><%#= @women%><%#= @children%>
+<%= @men%><%= @women%><%= @children%>
 
 	<%= form_tag("/products", method: "get",type:"num", id:"select000") do %>
 	<span id="select001">
-			<span><%#= form_tag("/products", method: "get",type:"num", id:"select010") do %></span>
-		<span>	 Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, id: "select011") %>.</span> Show by 
-		<span>	<%= select_tag(:orderBy, options_for_select([['name asc',name: :asc],
+		<span>Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, id: "select011") %>.</span> Show by 
+		<span><%= select_tag(:orderBy, options_for_select([['name asc',name: :asc],
 				['name desc',name: :desc], ['price asc', price: :asc], ['price desc', price: :desc]],
 				selected:@orderBy),id:"select012")%></span>
 		<span><%= label_tag(:men, "Men") %></span>
@@ -18,10 +17,6 @@
 		<span><%= check_box_tag(:women, 'w', @women) %></span>
 		<span><%= label_tag(:children, "Children")%></span>
 		<span><%= check_box_tag(:children, 'c', @children) %></span>
-		
-
-		
-	<%#end%>
 
 		<span><%= submit_tag("Apply",id:"catapply") %></span>	
 		<% end %>
