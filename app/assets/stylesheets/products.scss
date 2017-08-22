@@ -29,11 +29,15 @@ ahmmain{}
 	display:inline-block;
 }
 #men{
-	margin-left:20px;
+	margin-left:10px;
+}
+#select000 label{
+	font-weight:300;
 }
 #catapply{
 	border:2px ridge grey;
 	border-radius:5px;
+	margin-left:25px;
 	color:white;
 	background-color:darkred;
 }
@@ -59,13 +63,15 @@ ahmmain{}
 	height:22px;
 	border:4px ridge lightgray;
 	border-radius:5px;
+	margin-bottom:10px;
 }
 #select012{
 	height:22px;
-	width:100px;
+	width:105px;
 	border:4px ridge lightgray;
 	margin-top:5px;
 	margin-right:15px;
+	margin-bottom:10px;
 	border-radius:5px;
 
 }

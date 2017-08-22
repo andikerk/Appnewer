@@ -7,21 +7,23 @@
 
 	<%= form_tag("/products", method: "get",type:"num", id:"select000") do %>
 	<span id="select001">
-		<span><%= check_box_tag(:men,'m',@men)%></span>
-		<span><%= label_tag(:men, "men") %></span>
-		<span><%= check_box_tag(:women, 'w', @women) %></span>
-		<span><%= label_tag(:women, "women")%></span>
-		<span><%= check_box_tag(:children, 'c', @children) %></span>
-		<span><%= label_tag(:children, "children")%></span>
-
-		<span><%= submit_tag("Apply",id:"catapply") %></span>
-	<%end%>
-		<span><%= form_tag("/products", method: "get",type:"num", id:"select010") do %></span>
-		<span><b>	 Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, onchange:"this.form.submit();", id: "select011") %>.</span> Show by 
+			<span><%#= form_tag("/products", method: "get",type:"num", id:"select010") do %></span>
+		<span>	 Max € <%= number_field_tag(:maxamount,placeholder= @maxamount/100, id: "select011") %>.</span> Show by 
 		<span>	<%= select_tag(:orderBy, options_for_select([['name asc',name: :asc],
 				['name desc',name: :desc], ['price asc', price: :asc], ['price desc', price: :desc]],
-				selected:@orderBy), onchange: "this.form.submit();",id:"select012")%></span></b>
-			
+				selected:@orderBy),id:"select012")%></span>
+		<span><%= label_tag(:men, "Men") %></span>
+		<span><%= check_box_tag(:men,'m',@men)%></span>
+		<span><%= label_tag(:women, "Women")%></span>
+		<span><%= check_box_tag(:women, 'w', @women) %></span>
+		<span><%= label_tag(:children, "Children")%></span>
+		<span><%= check_box_tag(:children, 'c', @children) %></span>
+		
+
+		
+	<%#end%>
+
+		<span><%= submit_tag("Apply",id:"catapply") %></span>	
 		<% end %>
 	</span>
 </div>
