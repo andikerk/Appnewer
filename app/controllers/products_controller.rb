@@ -37,9 +37,13 @@ class ProductsController < ApplicationController
     end
 #---------------------------paginate products----------------------
     if !@men&&!@women&&!@children
-      @products = @products.paginate(page:params[:page], per_page:6).order( @orderBy).where("price < #{@maxamount}")
+     @products = @products.paginate(page:params[:page], per_page:6).order( @orderBy).where("price < #{@maxamount}")
+      
+    
     else
-      @products = @products.paginate(page:params[:page], per_page:6).where("category = '#{@men}' OR category = '#{@women}'OR category = '#{@children}'").order( @orderBy).where("price < #{@maxamount}")
+      @products = @products.paginate(page:params[:page], per_page:6).
+      where("category = '#{@men}' OR category = '#{@women}'OR category = '#{@children}'").
+      order( @orderBy).where("price < #{@maxamount}")
     end 
   end
 

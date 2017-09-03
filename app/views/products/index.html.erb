@@ -3,7 +3,6 @@
 <h1 id="ourprod">Our Bikes</h1>
 
 <div  id="select" class="container-fluid">
-<%= @men%><%= @women%><%= @children%>
 
 	<%= form_tag("/products", method: "get",type:"num", id:"select000") do %>
 	<span id="select001">
@@ -17,11 +16,12 @@
 		<span><%= check_box_tag(:women, 'w', @women) %></span>
 		<span><%= label_tag(:children, "Children")%></span>
 		<span><%= check_box_tag(:children, 'c', @children) %></span>
-
 		<span><%= submit_tag("Apply",id:"catapply") %></span>	
 		<% end %>
 	</span>
 </div>
+
+
 <div class="container-fluid">
 	<div class="row" id="prodindexrow">
 
@@ -33,6 +33,7 @@
 
 	</div>
 </div>
+
 <div id = 'paginatediv'>
 	<span><%= will_paginate @products,  previous_label: "previous", next_label: "next", id:"pagecontrol" %></span><% {is_active:true}%>
 </div>

@@ -20,6 +20,10 @@
       <strong>Colour:</strong>
       <%= @product.colour %>
     </p>
+    <p>
+      <strong>Orders:</strong>
+      <%= Order.where('product_id = 1').count %>
+    </p>
 
     <p>
       <strong>Price:</strong>

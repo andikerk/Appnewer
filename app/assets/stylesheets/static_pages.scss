@@ -107,6 +107,200 @@ footer{
 	color:red;
 	text-shadow:0px 0px 17px white;
 }
+
+----------------------landing page new version---
+#magic{
+	margin-bottom:-50px;
+}
+
+
+#pic1{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:auto;
+	opacity:1;
+	z-index:1;
+	-webkit-animation-name: opaki1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:16s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:infinite; /* Safari 4.0 - 8.0 */
+    animation-name: opaki1;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes opaki1 {
+    0%   {opacity:1;}
+    33%  {opacity:0;}
+    66%  {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes opaki1 {
+    0%   {opacity:1;}
+    33%  {opacity:0;}
+    66%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+
+#pic2{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:auto;
+	opacity:1;
+	z-index:1;
+	-webkit-animation-name: opaki2; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:16s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:infinite; /* Safari 4.0 - 8.0 */
+    animation-name: opaki2;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes opaki2 {
+    0%   {opacity:0;}
+    33%  {opacity:1;}
+    66%  {opacity:0;}
+    100% {opacity:0;}
+}
+@keyframes opaki2 {
+    0%   {opacity:0;}
+    33%  {opacity:1;}
+    66%  {opacity:0;}
+    100% {opacity:0;}
+}
+#pic3{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:auto;
+	opacity:1;
+	z-index:1;
+	-webkit-animation-name: opaki3; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 16s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: opaki3;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes opaki3 {
+    0%   {opacity:0;}
+    33%  {opacity:0;}
+    66%  {opacity:1;} 
+    100% {opacity:0;}
+}
+@keyframes opaki3 {
+    0%   {opacity:0;}
+    33%  {opacity:0;}
+    66%  {opacity:1;} 
+    100% {opacity:0;}
+}
+
+#msg1{
+	position:relative;
+	left:20%;
+	top:2rem;
+	z-index:100;
+	font-size:3rem;
+	font-weight:700;
+	color:darkred;
+	line-height:.1rem;
+	-webkit-animation-name: msg1an; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:5s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:1; /* Safari 4.0 - 8.0 */
+	animation-name: msg1an;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+@-webkit-keyframes msg1an {
+    0%   {top:-6rem;color:orange;}
+    100% {top:2rem;}
+}
+@keyframes msg1an {
+    0%   {top:-6rem;color:orange;}
+    100% {top:2rem;}
+}
+#msg2{
+	position:relative;
+	left:20%;
+	top:2rem;
+	z-index:100;
+	font-size:3rem;
+	font-weight:700;
+	color:darkred;
+	line-height:.1rem;
+	-webkit-animation-name: msg2an; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:5s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:1; /* Safari 4.0 - 8.0 */
+	animation-name: msg2an;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+@-webkit-keyframes msg2an {
+    0%   {left:0;color:red;}
+    30%  {left:30%;}
+    100% {left:20%;}
+}
+@keyframes msg2an {
+    0%   {left:0;color:red;}
+    30%  {left:30%;}
+    100% {left:20%;}
+}
+#msg3{
+	position:relative;
+	left:20%;
+	top:2rem;
+	z-index:100;
+	font-size:3rem;
+	font-weight:700;
+	color:darkred;
+	line-height:.1rem;
+	-webkit-animation-name: msg3an; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:5s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:1; /* Safari 4.0 - 8.0 */
+	animation-name: msg3an;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+@-webkit-keyframes msg3an {
+    0%   {top:-6rem;color:pink;}
+    100% {top:2rem;}
+}
+@keyframes msg3an {
+    0%   {top:-6rem;color:pink;}
+    100% {top:2rem;}
+}
+#msg4{
+	position:relative;
+	left:20%;
+	top:2rem;
+	z-index:100;
+	font-size:3rem;
+	font-weight:700;
+	color:darkred;
+	line-height:.1rem;
+	-webkit-animation-name: msg4an; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration:5s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay:2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count:1; /* Safari 4.0 - 8.0 */
+	animation-name: msg4an;
+    animation-duration: 5s;
+    animation-delay:2s;
+    animation-iteration-count: 1;
+}
+@-webkit-keyframes msg4an {
+    0%   {top:22rem;left:0;color:orange;}
+    50% {top:-12rem;}
+    100% {top:2rem;}
+}
+@keyframes msg4an {
+    0%   {top:22rem;left:0;color:orange;}
+    50% {top:-12rem;}
+    100% {top:2rem;}
+}
 //-----------------------------------navbar-----------------------------------------//
 .navbar-collapse.collapse{
 	margin-left:-15px;

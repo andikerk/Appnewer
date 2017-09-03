@@ -1,48 +1,64 @@
-<% cache do %>
-<h2 id="landhead">Our Bestsellers:</h2>
+<!--<%# cache do %>
+<h2 id="landhead">Our Bestsellers:</h2>-->
 
-  
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000" data-wrap = "true">
+  <!--  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000" data-wrap = "true">-->
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+  <!--   <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
+      </ol>-->
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
+  <!--   <div class="carousel-inner" role="listbox">
 
-        <% @products.each do |product| %>
+        <%# @products.each do |product| %>
 
-        <div class="item<%= " active" if product == @products.first %>">
-        <%= link_to product_path(product.id) do %>
+        <div class="item<%#= " active" if product == @products.first %>">
+        <%#= link_to products_path do %>
         
-        <%= image_tag(product.image_url, class: "img-responsive", id:"slide")%>
+        <%#= image_tag(product.image_url, class: "img-responsive", id:"slide")%>
 
 
         
          
           <div class="carousel-caption">
-            <h3><%= product.name %></h3>
-            <p id="prodpricel"><%= number_to_currency(product.price.to_d/100,unit:"€") %></p>
+            <h3><%#= product.name %></h3>
+            <p id="prodpricel"><%#= number_to_currency(product.price.to_d/100,unit:"€") %></p>
           </div>
-        <%end%>
+        <%#end%>
         </div>
-       	<% end %>
-      </div>
+       	<%#end%>
+      </div>-->
 
       <!-- Controls -->
-    <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <!--   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-      </a>-->
-    </div>
-  
+      </a>
+   </div>
+
+<%# end %>-->
+
+          <%= link_to products_path do %>
+          <div id="magic" class = "embed-responsive embed-responsive-16by9">
+            
+            <p id = "msg1"> Bicycles </p> 
+            <p id = "msg2"> For </p>
+            <p id = "msg3"> All </p>
+            <p id = "msg4"> Occasions </p>
+            
+            <img id= "pic1" class = "img-responsive" src = "https://image.freepik.com/free-photo/playful-couple-having-fun-outdoors_1140-36.jpg">
+            <img id= "pic2" class = "img-responsive" src = "https://image.freepik.com/free-photo/biking-active-bike-background-bicycle_1303-2608.jpg">
+            <img id= "pic3" class = "img-responsive" src = "https://image.freepik.com/free-photo/happy-young-couple-on-a-bike-ride-in-the-countryside_1301-6087.jpg">
+            
+          </div>
+          <%end%>
+   
 
 
-<% end %>
+
