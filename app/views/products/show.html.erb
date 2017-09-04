@@ -4,29 +4,29 @@
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
 
     <h3>  
-      <strong><%= @product.name %></strong>
+      <%= @product.name %>
     </h3>
 
     <p>
-      <strong><%= @product.description %></strong>
+      <%= @product.description %>
     </p>
 
     <p>
-      <strong>Wheelsize:</strong>
+      Wheelsize:
       <%= @product.wheelsize %>
     </p>
 
     <p>
-      <strong>Colour:</strong>
+      Colour:
       <%= @product.colour %>
     </p>
     <p>
-      <strong>Orders:</strong>
+      Orders:
       <%= Order.where('product_id = 1').count %>
     </p>
 
     <p>
-      <strong>Price:</strong>
+      Price:
       <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
     </p>
 <% end %> <!--end of caching-->

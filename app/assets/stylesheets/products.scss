@@ -3,25 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
--------------------index view--------------------------------------
-ahmmain{}
+//-------------------index view--------------------------------------
+
 
 #ourprod{
 	color:white;
 	font-weight:900;
-	font-style: italic;
-	font-family:serif;
-	letter-spacing:.25em;
 	text-align:center;
 	margin-top:50px;
-	margin-bottom:10px;
+	margin-bottom:0;
 	padding:.5em;
 	text-shadow:  -5px -5px 20px red;
-	background-color:#DB7B3B;
+	background-color:lightgray;
 	border-bottom:1px solid lightblue;
 }
+
+//-------------filter-----------------------
+
 #select{
-	background-color:mistyrose;	
+	background-color:lightblue;	
 	padding:10px;
 	margin-bottom:7px;
 }
@@ -39,7 +39,7 @@ ahmmain{}
 	border-radius:5px;
 	margin-left:25px;
 	color:white;
-	background-color:darkred;
+	background-color:orange;
 }
 #select001{	
 	margin:0;
@@ -50,7 +50,6 @@ ahmmain{}
 }
 
 #select10{
-
 	height:32px;
 	text-align:center;
 	border-radius:5px;
@@ -73,30 +72,11 @@ ahmmain{}
 	margin-right:15px;
 	margin-bottom:10px;
 	border-radius:5px;
-
 }
 
+//------------------end filter-----------------------
 
-#prodindexrow{
-	margin-left:-7;
-	margin-right:-7;
-	background-color:lightyellow;
-
-}
-#prodcont{
-	padding:0;
-
-
-}
-#innerprodcont{
-	border:4px groove lightgray;
-	padding:5px;
-	border-radius:5px;
-	margin:2px;
-}
-#innerprodcont div{
-	margin-top:0;
-}
+//-----pagination indexpage--------------------------------------------
 
 #paginatediv{
 	background-color:#85BF2E;
@@ -104,8 +84,7 @@ ahmmain{}
 	margin-bottom:15px;
 	padding-left:20px;
 }
-#pagecontrol a ,#pagecontrol span {
-	
+#pagecontrol a ,#pagecontrol span {	
 	color:lightyellow;
 	border-radius:5px;
 	font-size:1em;
@@ -125,8 +104,20 @@ ahmmain{}
 
 
 ---------------------------------------_product partial----------------------------------------
-*{
-	border: 1px solid red;
+#prodindexrow{
+	margin-left:-7;
+	margin-right:-7;
+}
+#prodcont{
+	padding:0;
+	margin:0;	
+}
+#innerprodcont{
+	border:.1px solid black;
+	padding:5px;
+	border-radius:5px;
+	margin:2px;
+	background-color:lightyellow;
 }
 
 #proddescr,#prodcol,#prodwheelsz,#SED{
@@ -135,22 +126,27 @@ ahmmain{}
 	margin-left:0;
 	margin-right:0;
 	font-size:1em;
-	
+
+}
+#prodname{
+	font-size:1,7em;
+	font-weight:300;
+	text-align:center;
+	margin:10px;
+	color:black;
 }
 #proddescr{
 	height:4em;
 	overflow-y:auto;
 	background-color:white;
-
+	padding:5px;
+	
 }
-
 .prodpic{
 	width:100%;
 	height:auto;
 	display:block;
 	margin-bottom:10px;
-
-
 }
 
 #prodprice{
@@ -163,14 +159,14 @@ ahmmain{}
 	background-color:#F08011;
 	text-align:center;
 	color:white;
-	border-radius:3px;
-	
+	border-radius:3px;	
 }
 #prodid{
 	margin:0;
 	margin-left:7px;
 	font-size:0.7em;
 }
+//---------------show view----------------------
 #SED{
 	font-size:.7em;
 	text-align:center;
@@ -185,29 +181,29 @@ ahmmain{}
 	margin:10px;
 	margin-left:10px;
 }
+
 #showprodrow{
-	margin-top:90px;	
+	margin-top:50px;	
 	margin-left:0px;
 	margin-right:0px;
+	padding-top:20px;
+	background-color:#ffffe6;
 }
 
 #prodshowdescr p{
-	margin:0px;
-	font-style:italic;
-	font-family:serif;
+	margin:10px;
+	font-size:1em;
+	font-weight:normal;
+}
+
+#prodshowdescr h3{
+	text-align:center;
+	font-weight:bold;	
 }
 
 #stripebtn{
 	margin-left:8px;
 	margin-top:15px;
 	margin-bottom:25px;
+}
 
-}
-.prodname{
-	font-size:1,7em;
-	font-weight:600;
-	font-family:serif;
-	font-style:italic;
-	text-align:center;
-	margin:10px;
-}
