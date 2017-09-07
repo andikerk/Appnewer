@@ -49,6 +49,10 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
 
 
 
+  $('#pic1').on('load',function(){$('#pic1').show();$('#pic1').css("animation-delay","0s");})
+  $('#pic2').on('load',function(){$('#pic2').show();$('#pic2').css("animation-delay","0s");})
+  $('#pic3').on('load',function(){$('#pic3,#schnecke').show();$('#pic1,#pic2,#pic3,#schnecke').css("animation-delay","0");})
+
 
 
 // elevateZoom freezes mobile devices, so only for larger screens
@@ -59,12 +63,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
     lensShape: "round",
     lensSize: 150
   });
-
-  }
-
-
-
-    
+  }    
 });
 
 

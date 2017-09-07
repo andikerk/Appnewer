@@ -13,8 +13,8 @@
 	margin-top:50px;
 	margin-bottom:0;
 	padding:.5em;
-	text-shadow:  -5px -5px 20px red;
-	background-color:lightgray;
+	text-shadow:  -5px -5px 20px darkred;
+	background-color:black;
 	border-bottom:1px solid lightblue;
 }
 
@@ -117,7 +117,9 @@
 	padding:5px;
 	border-radius:5px;
 	margin:2px;
-	background-color:lightyellow;
+background-color: #ff6600;
+background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 #proddescr,#prodcol,#prodwheelsz,#SED{
@@ -126,6 +128,8 @@
 	margin-left:0;
 	margin-right:0;
 	font-size:1em;
+	background-color:white;
+	border-radius:5px;
 
 }
 #prodname{
@@ -187,13 +191,14 @@
 	margin-left:0px;
 	margin-right:0px;
 	padding-top:20px;
-	background-color:#ffffe6;
+	background-color: #ffa200;
+	background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
 }
 
 #prodshowdescr p{
 	margin:10px;
 	font-size:1em;
-	font-weight:normal;
+	font-weight:bold;
 }
 
 #prodshowdescr h3{
