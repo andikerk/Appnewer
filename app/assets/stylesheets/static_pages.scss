@@ -223,14 +223,15 @@ footer{
 }
 
 #schnecke{
-	display:none;
+	display:block;
 	position:absolute;
 	top:50px;
 	left:5%;
+	font-size:2em;
 	z-index:100;
 	background-color:white;
 	padding:3px;
-	z-index:10000;
+	z-index:1;
 
 }
 
