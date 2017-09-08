@@ -19,6 +19,33 @@ var refreshRating = function(){
   });
 };
 
+
+
+
+
+
+$(document).on('turbolinks:load ajaxSuccess', function(){
+
+  $('.alert').delay(3000).fadeOut(2000);
+  $('.notice').delay(3000).fadeOut(2000);
+
+  refreshRating();
+
+  $('#pic1').on('load',function(){$('#pic1').show();})
+  $(window).on('load',function(){$('#pic2, #pic3,#schnecke')
+    .show();$('#pic1,#pic2,#pic3,#schnecke').css("animation-play-state","running");})
+ 
+  
+// elevateZoom freezes mobile devices, so only for larger screens
+// elevateZoom is in vendor/assets
+
+  if(window.screen.width>800){
+   $('.img-zoom').elevateZoom({
+    zoomType: "lens",
+    lensShape: "round",
+    lensSize: 150
+  });
+  } 
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -38,34 +65,6 @@ window.cookieconsent.initialise({
 })});
 
 
-
-
-$(document).on('turbolinks:load ajaxSuccess', function(){
-
-  $('.alert').delay(3000).fadeOut(2000);
-  $('.notice').delay(3000).fadeOut(2000);
-
-  refreshRating();
-
-
-
-  $('#pic1').on('load',function(){$('#pic1').show().css("animation-delay","100s");})
-  $('#pic2').on('load',function(){$('#pic2').show().css("animation-delay","100s");})
-  $('#pic3').on('load',function(){$('#pic3').show();$('#pic1,#pic2,#pic3').css("animation-delay","0");})
-  $('#pic3').on('load',function(){$('#schnecke').show();})
-  
-
-
-
-// elevateZoom freezes mobile devices, so only for larger screens
-// elevateZoom is in vendor/assets
-  if(window.screen.width>800){
-   $('.img-zoom').elevateZoom({
-    zoomType: "lens",
-    lensShape: "round",
-    lensSize: 150
-  });
-  }    
 });
 
 
