@@ -63,34 +63,36 @@
       </div>
       <p id="cancelback"> <%= link_to "Back", :back,class:"btn btn-default" %></p>
     </div>
+    <div>
+      <%= form_for(resource, as: resource_name, url: user_path(@user), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <h4>Change Data:  <%= @user.username.to_s.humanize %> </h4>
+
+        <div class="field">
+          <%= f.label :first_name %><br />
+          <%= f.text_field :first_name, autofocus: true,class:"input-form form-control" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :last_name %> <br />
+          <%= f.text_field :last_name, autofocus: true,class:"input-form form-control" %>   
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update",class:"btn btn-default" %>     
+      <% end %>
+    </div>
+  </div>
   </div>
 
 
-  <div class="col-md-4 col-sm-12">
+ <!-- <div class="col-md-4 col-sm-12">
+    <div id = "purchases">
+      <h4>My Purchases</h4>
 
-    <%= form_for(resource, as: resource_name, url: user_path(@user), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <h4>Change Data:  <%= @user.username.to_s.humanize %> </h4>
-
-      <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name, autofocus: true,class:"input-form form-control" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :last_name %> <br />
-        <%= f.text_field :last_name, autofocus: true,class:"input-form form-control" %>   
-      </div>
-
-      <div class="actions">
-        <%= f.submit "Update",class:"btn btn-default" %>
-      </div>
-
-
-   
-    <% end %>
-  </div>
+    </div>
+  </div>-->
 </div>
 
 

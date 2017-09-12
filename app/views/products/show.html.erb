@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <% cache @product do %>
 <div class="row" id="showprodrow" data-product-id="<%=@product.id %>">
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
@@ -12,24 +12,26 @@
     </p>
 
     <p>
-      Wheelsize:
+      Rim Size:
       <%= @product.wheelsize %>
     </p>
 
     <p>
-      Colour:
+      Color:
       <%= @product.colour %>
-    </p>
-    <p>
-      Orders:
-      <%= Order.where('product_id = 1').count %>
-    </p>
+    </p> 
 
     <p>
       Price:
       <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
     </p>
 <% end %> <!--end of caching-->
+
+    <p>  
+      Sold:
+      <%= Order.where("product_id = #{@product.id}").count %>
+    </p>
+
     <% @product.average_rating %>
 
     <%if !signed_in?%>
