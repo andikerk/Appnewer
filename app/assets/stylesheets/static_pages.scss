@@ -582,4 +582,40 @@ footer{
     50% {padding-top:20px;padding-bottom:20px;top:50px;padding-left:30px;padding-right:30px;}
     100% {padding-top:50px;padding-bottom:50px;top:20px;padding-left:5px; padding-right:5px;}
 }
+#randomwrapper{
+	height:5vw;
+}
+#random{ 
+	color:white;
+	text-shadow: 1px 1px 1px black;
+	background-color:blue;
+	//padding:10px;
+	transform:rotateZ(70deg);
+	position:relative;
+	left:20px;
+    width:60px;
+    margin:0;
+    border:.1px solid black;
+    z-index:1;
+}
+#canvas-wrapper{
+	width:90vw;
+	height:30vw;
+	display:block;
+	margin:auto;
+	overflow:hidden;
+	border:2px solid black;
+	border-radius:7px;
+}
+#myCanvas{
+   width:100%;
+   style-width:2000;
+   // height:50vw;
+    background-color:transparent;
+    border:1px solid #d3d3d3;
+    z-index:1;
+}
+#socket{
+	height: 5vw;
+}
 

@@ -19,33 +19,93 @@ var refreshRating = function(){
   });
 };
 
+var begin;
+var interval = 1000; 
+var sum = 0;  
+var looplim;
+
+function startDraw(){ 
+  refreshCanvas();
+  begin = true;
+  looplim = 50;
+  setInterval(function(){
+    drawLine();
+    },
+    interval); 
+}
+
+function stopDraw(){
+  begin = false;
+}
+function carryOn(){
+  begin = true; 
+}
+function clearThis(){
+  location.reload(); 
+}
+var refreshCanvas = function(){
+  var c=document.getElementById("myCanvas");
+    c.width = 1800;
+    c.height = 600;
+} 
 
 
 
+function drawLine(){if(begin == true){
+    var c=document.getElementById("myCanvas");
+    var x = []; var y =[] ;
+    var color = `#${(Math.floor(Math.random()*16000000)).toString(16)}`;
+    var picno = Math.floor(Math.random()*3)*600;
+    for (var i =  0; i <Math.random()*looplim; i++ ){
+            x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
+            var ctx=c.getContext("2d"); 
+            ctx.beginPath();
+            ctx.moveTo(x[i],y[i]);
+            x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
+            ctx.lineTo(x[i+1],y[i+1]);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = sum%20 + 1;
+            ctx.shadowBlur = 5;
+            ctx.shadowColor = 'rgb(0, 0, 0)';
+            ctx.stroke();
+            x[i]=x[i+1];y[i]=y[i+1];
+    }    
+    sum++;
+    }
+}
 
 
 $(document).on('turbolinks:load ajaxSuccess', function(){
+
+  looplim = 0;
 
   $('.alert').delay(3000).fadeOut(2000);
   $('.notice').delay(3000).fadeOut(2000);
 
   refreshRating();
+  
 
   $('#pic1').on('load',function(){$('#pic1').show();})
   $(window).on('load',function(){$('#pic2, #pic3,#schnecke')
     .show();$('#pic1,#pic2,#pic3,#schnecke').css("animation-play-state","running");})
+
+   
+
  
   
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
-
+  
   if(window.screen.width>800){
-   $('.img-zoom').elevateZoom({
-    zoomType: "lens",
-    lensShape: "round",
-    lensSize: 150
-  });
+     
+      $('.img-zoom').elevateZoom({
+      zoomType: "lens",
+      lensShape: "round",
+      lensSize: 200
+    });
+
   } 
+
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
