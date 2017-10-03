@@ -54,7 +54,9 @@ var refreshCanvas = function(){
 function drawLine(){if(begin == true){
     var c=document.getElementById("myCanvas");
     var x = []; var y =[] ;
-    var color = "black";//`#${(Math.floor(Math.random()*16000000)).toString(16)}`;
+   // var color = `#${(Math.floor(Math.random()*2560) + 0 ).toString(16)}`;
+   //var color = `rgb(${Math.floor(Math.random()*256),0,0 })`;
+   var color = `rgb(${Math.ceil(Math.random()*255 + 0)},${Math.ceil(Math.random()*255 +0 )},${Math.ceil(Math.random()*255 +0 )} )`;
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
@@ -65,7 +67,7 @@ function drawLine(){if(begin == true){
             ctx.lineTo(x[i+1],y[i+1]);
             ctx.strokeStyle = color;
             ctx.lineWidth = sum%20 + 1;
-            ctx.shadowBlur = 5;
+            ctx.shadowBlur = 0;
             ctx.shadowColor = 'rgb(0, 0, 0)';
             ctx.stroke();
             x[i]=x[i+1];y[i]=y[i+1];
