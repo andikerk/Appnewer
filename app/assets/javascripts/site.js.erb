@@ -54,7 +54,7 @@ var refreshCanvas = function(){
 function drawLine(){if(begin == true){
     var c=document.getElementById("myCanvas");
     var x = []; var y =[] ;
-    var color = `#${(Math.floor(Math.random()*16000000)).toString(16)}`;
+    var color = "black";//`#${(Math.floor(Math.random()*16000000)).toString(16)}`;
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
