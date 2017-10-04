@@ -64,7 +64,7 @@ function drawLine(){if(begin == true){
       var blue = Math.ceil(Math.random()*255);
     //  var color =`rgb(${red}, ${green}, ${blue})`;
       var color ="rgb"+"("+(red)+","+(green)+","+(blue)+")";
-      
+
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
             var ctx=c.getContext("2d"); 
             ctx.beginPath();
@@ -72,7 +72,7 @@ function drawLine(){if(begin == true){
             x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
             ctx.lineTo(x[i+1],y[i+1]);
             ctx.strokeStyle = color;
-            ctx.lineWidth = sum%20 + 1;
+            ctx.lineWidth = (Math.random()*30) + 5;
             ctx.shadowBlur = 0;
             ctx.shadowColor = 'rgb(0, 0, 0)';
             ctx.stroke();
@@ -81,6 +81,8 @@ function drawLine(){if(begin == true){
     sum++;
     }
 }
+
+
 
 
 $(document).on('turbolinks:load ajaxSuccess', function(){

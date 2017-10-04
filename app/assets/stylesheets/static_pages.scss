@@ -583,7 +583,13 @@ footer{
     100% {padding-top:50px;padding-bottom:50px;top:20px;padding-left:5px; padding-right:5px;}
 }
 #randomwrapper{
-	height:5vw;
+
+}
+#randomwrapper h4{
+	text-align:center;
+}
+#randomwrapper h6{
+	text-align:center;
 }
 #random{ 
 	color:white;
@@ -599,10 +605,11 @@ footer{
     z-index:1;
 }
 #canvas-wrapper{
-	width:90vw;
-	height:30vw;
+	width:99vw;
+	height:33vw;
 	display:block;
 	margin:auto;
+	margin-bottom:1vw;
 	overflow:hidden;
 	border:2px solid black;
 	border-radius:7px;
@@ -615,7 +622,10 @@ footer{
     border:1px solid #d3d3d3;
     z-index:1;
 }
+#socket button.btn.btn-small{
+	margin:4px;
+}
 #socket{
-	height: 5vw;
+	
 }
 
