@@ -587,9 +587,16 @@ footer{
 }
 #randomwrapper h4{
 	text-align:center;
+	position:relative;
+	top:0;
+	color:black;
+	font-weight:600;
+	font-size:2vw;
+	z-index:1000;
 }
 #randomwrapper h6{
 	text-align:center;
+
 }
 #random{ 
 	color:white;
@@ -618,12 +625,20 @@ footer{
    width:100%;
    style-width:2000;
    // height:50vw;
-    background-color:transparent;
+   
     border:1px solid #d3d3d3;
     z-index:1;
+   // background-color:linen;
+//background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 #socket button.btn.btn-small{
 	margin:4px;
+}
+#btncont{
+	display:block;
+	width:320px;
+	margin:auto;
 }
 #socket{
 	
