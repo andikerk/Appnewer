@@ -56,9 +56,15 @@ function drawLine(){if(begin == true){
     var x = []; var y =[] ;
    // var color = `#${(Math.floor(Math.random()*2560) + 0 ).toString(16)}`;
    //var color = `rgb(${Math.floor(Math.random()*256),0,0 })`;
-   var color = `rgb(${Math.ceil(Math.random()*255 + 0)},${Math.ceil(Math.random()*255 +0 )},${Math.ceil(Math.random()*255 +0 )} )`;
+   //var color = `rgb(${Math.ceil(Math.random()*255 + 0)},${Math.ceil(Math.random()*255 +0 )},${Math.ceil(Math.random()*255 +0 )} )`;
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
+      var red = Math.ceil(Math.random()*255);
+      var green = Math.ceil(Math.random()*255);
+      var blue = Math.ceil(Math.random()*255);
+    //  var color =`rgb(${red}, ${green}, ${blue})`;
+      var color ="rgb"+"("+(red)+","+(green)+","+(blue)+")";
+      
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
             var ctx=c.getContext("2d"); 
             ctx.beginPath();
