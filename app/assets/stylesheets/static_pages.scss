@@ -263,7 +263,7 @@ footer{
 	animation-delay:5s;
     animation-duration: 5s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 20;
+    animation-iteration-count: infinite;
 }
 @-webkit-keyframes msg1an {
     0%   {top:-6rem;color:orange;}
@@ -289,7 +289,7 @@ footer{
 	animation-delay:5s;
     animation-duration: 5s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 20;
+    animation-iteration-count: infinite;
 }
 @-webkit-keyframes msg2an {
     0%   {left:0;color:red;}
@@ -317,7 +317,7 @@ footer{
 	animation-delay:5s;
     animation-duration: 5s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 20;
+    animation-iteration-count: infinite;
 }
 @-webkit-keyframes msg3an {
     0%   {top:-6rem;color:pink;}
@@ -344,7 +344,7 @@ footer{
     animation-duration: 5s;
     animation-delay:7s;
     animation-timing-function: ease-out;
-    animation-iteration-count: 20;
+    animation-iteration-count:  infinite;
 }
 @-webkit-keyframes msg4an {
     0%   {top:22rem;left:0;color:orange;}
