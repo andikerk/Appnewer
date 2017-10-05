@@ -52,13 +52,13 @@
 
 
         <%if !signed_in?%>
-          <button class="btn btn-default btn-info" id="buy?login!">
+          <button class="btn btn-default btn-info purchase" id="buy?login!" >
             <%=link_to "Buy? Login!", new_user_session_path %>
           </button>
         <%end%>
 
         <%if signed_in?%>
-          <button class="btn btn-default btn-info" onclick = "showConditionsConsent()" >Purchase</button>
+          <button class="btn btn-default btn-info purchase"  onclick = "showConditionsConsent()" >Purchase</button>
           <div id = "conditionsconsent">
             <span>I have read</span> <%= link_to static_pages_imprint_path do%><span>
             terms and conditions</span><%end%><span> and accept them.</span><input type="checkbox"   id="accept" 
