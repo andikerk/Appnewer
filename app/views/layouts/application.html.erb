@@ -63,7 +63,7 @@
 				        <li>
 						  <% if user_signed_in? %>
 						  	<%= link_to "",edit_user_registration_path, :class => "glyphicon glyphicon-user",id:"useredit" %></li>
-						<li>   <%= link_to('logout', destroy_user_session_path, method: :delete, id:"logout") %></li>
+						<li>   <%= link_to('LOGOUT', destroy_user_session_path, method: :delete, id:"logout") %></li>
 
 						  <% else %>
 						    <%= link_to('LOGIN', new_user_session_path,id:"login") %>

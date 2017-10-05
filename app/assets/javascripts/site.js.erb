@@ -19,6 +19,28 @@ var refreshRating = function(){
   });
 };
 
+function showConditionsConsent(){
+  $('#conditionsconsent').show();
+  $('#stripebtn').hide();
+}
+
+function hideConditionsConsent(){
+  $('#conditionsconsent').hide();
+}
+
+function showStripebtn(){
+  var check = $("#accept").is(':checked');
+
+  if(check === true){
+    $('#stripebtn').show();
+  } 
+  if(check === false){
+    $('#stripebtn').hide();
+  } 
+}
+
+
+
 var begin;
 var interval = 1000; 
 var sum = 0;  
@@ -95,6 +117,8 @@ function landingPage(){
 }
 
 
+
+
 $(document).on('turbolinks:load ajaxSuccess', function(){
 
   landingPage();
@@ -106,7 +130,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
- 
+
 
 if(window.screen.width>800)
 {    

@@ -1,90 +1,108 @@
 
 <% cache @product do %>
 <div class="row" id="showprodrow" data-product-id="<%=@product.id %>">
+
+
+
   <div class="col-sm-4 col-xs-12" id="prodshowdescr">
 
-    <h3>  
-      <%= @product.name %>
-    </h3>
+        <h3>  
+          <%= @product.name %>
+        </h3>
 
-    <p>
-      <%= @product.description %>
-    </p>
+        <p>
+          <%= @product.description %>
+        </p>
 
-    <p>
-      Rim Size:
-      <%= @product.wheelsize %>
-    </p>
+        <p>
+          Rim Size:
+          <%= @product.wheelsize %>
+        </p>
 
-    <p>
-      Color:
-      <%= @product.colour %>
-    </p> 
+        <p>
+          Color:
+          <%= @product.colour %>
+        </p> 
 
-    <p>
-      Price:
-      <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
-    </p>
+        <p>
+          Price:
+          <%= number_to_currency(@product.price.to_d/100,unit:"€") %>
+        </p>
 <% end %> <!--end of caching-->
 
-    <p>  
-      Sold:
-      <%= Order.where("product_id = #{@product.id}").count %>
-    </p>
+        <p>  
+          Sold:
+          <%= Order.where("product_id = #{@product.id}").count %>
+        </p>
 
-    <% @product.average_rating %>
+        <% @product.average_rating %>
 
-    <%if !signed_in?%>
-      <button class="btn btn-default btn-info" id="buy?login!">
-        <%=link_to "Buy? Login!", new_user_session_path %>
-      </button>
-    <%end%>
 
-    <%if signed_in?%>
-      <div id="stripebtn">
-        <%= form_tag "/payments/create" do %>
-        <%= hidden_field_tag(:product_id, @product.id) %>
-        <%= render partial: "shared/stripe_checkout_button" %>
-        <%end%> 
-      </div>
-    <%end%>
-      
           
-    <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
-    <br>
+        <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+        <br>
         
-    <% if(@comments.count>=2)%> 
-      <p> Highest rating:"<%= @product.highest_rating_comment.body%>"
-      <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
-      <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
-      <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
-    <%end%>
+        <% if(@comments.count>=2)%> 
+          <p> Highest rating:"<%= @product.highest_rating_comment.body%>"
+          <div class="rated" data-score = "<%= @product.highest_rating_comment.rating %>"></div></p>
+          <p> Lowest rating:"<%= @product.lowest_rating_comment.body%>" </p>
+          <p><div class="rated" data-score = "<%= @product.lowest_rating_comment.rating %>"></div></p>
+        <%end%>
+      
+
+
+        <%if !signed_in?%>
+          <button class="btn btn-default btn-info" id="buy?login!">
+            <%=link_to "Buy? Login!", new_user_session_path %>
+          </button>
+        <%end%>
+
+        <%if signed_in?%>
+          <button class="btn btn-default btn-info" onclick = "showConditionsConsent()" >Purchase</button>
+          <div id = "conditionsconsent">
+            <span>I have read</span> <%= link_to static_pages_imprint_path do%><span>
+            terms and conditions</span><%end%><span> and accept them.</span><input type="checkbox"   id="accept" 
+            onchange = "showStripebtn()"" ></input>
+            
+              <div id="stripebtn" onclick ="hideConditionsConsent()">
+                <%= form_tag "/payments/create" do %>
+                <%= hidden_field_tag(:product_id, @product.id) %>
+                <%= render partial: "shared/stripe_checkout_button" %>
+                <%end%>
+              </div>
+          </div>
+        <%end%>
   </div>
 
-<% cache @product.image_url do %>
+    
+
 
   <div class="col-sm-4 col-xs-12">
-        <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail",
-        data_zoom_image: @product.image_url, id: "showpic") %>
+<% cache @product.image_url do %>
+          <%= image_tag(@product.image_url, class: "img-zoom img-responsive img-thumbnail",
+          data_zoom_image: @product.image_url, id: "showpic") %>
 <% end %><!--end of caching--> 
-    <h6>Views:  
-      <span class="badge"><%= @product.views%></span> 
-    </h6>    
+      <h6>Views:  
+        <span class="badge"><%= @product.views%></span> 
+      </h6>    
   </div>
  
-       
+   
+
+
   <div class="col-sm-4 col-xs-12">
 
       <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
 
       <%= render partial:'new_comment' %>
       <%= render partial:'comments' %>
-  </div>
+  
 
-  <% if signed_in? && current_user.admin? %>
-    <p> <%= link_to 'Edit', edit_product_path(@product) %> 
-        <%= link_to 'Back', products_path %>
-        <%= link_to 'New Product', new_product_path %>
-    </p>
-  <%end%>
+      <% if signed_in? && current_user.admin? %>
+        <p> <%= link_to 'Edit', edit_product_path(@product) %> 
+            <%= link_to 'Back', products_path %>
+            <%= link_to 'New Product', new_product_path %>
+        </p>
+      <%end%>
+  </div>
 </div>
