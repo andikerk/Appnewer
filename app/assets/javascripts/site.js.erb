@@ -70,7 +70,45 @@ var refreshCanvas = function(){
     c.width = 1800;
     c.height = 600;
 } 
+//--------------------------------------------------------------------------------
 
+
+function setColor(){
+
+  // Get the slider values,
+  // stick them together.
+  var color = 'rgb(' +
+    sliders[0].noUiSlider.get() + ',' +
+    sliders[1].noUiSlider.get() + ',' +
+    sliders[2].noUiSlider.get() + ')';
+
+  // Fill the color box.
+  resultElement.style.background = color;
+  resultElement.style.color = color;
+}
+
+var resultElement = document.getElementById('result'),
+  sliders = document.getElementsByClassName('sliders');
+
+for ( var i = 0; i < sliders.length; i++ ) {
+
+  noUiSlider.create(sliders[i], {
+    start: 127,
+    connect: [true, false],
+    orientation: "vertical",
+    range: {
+      'min': 0,
+      'max': 255
+    },
+    format: wNumb({
+      decimals: 0
+    })
+  });
+
+  // Bind the color changing function
+  // to the slide event.
+  sliders[i].noUiSlider.on('slide', setColor);
+}
 
 
 function drawLine(){if(begin == true){
@@ -86,7 +124,7 @@ function drawLine(){if(begin == true){
       var blue = Math.ceil(Math.random()*255);
       var a = 1;
     //  var color =`rgb(${red}, ${green}, ${blue})`;
-      var color ="rgba"+"("+(red)+","+(green)+","+(blue)+","+(a)+")";
+      var color ="rgba" + "(" +(red)+ "," +(green)+ "," +(blue)+ "," +(a)+ ")";
 
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
             var ctx=c.getContext("2d"); 

@@ -24,8 +24,7 @@ class ProductsController < ApplicationController
     if params[:maxamount]
       @maxamount = params[:maxamount].to_i*100
     else
-     # @maxamount = Product.order(price: :desc).first.price + 100
-     @maxamount = Product.maximum('price') + 100
+      @maxamount = Product.maximum('price') + 100
     end
  
 #--------------------------------search by letter--------------------------
@@ -51,6 +50,7 @@ class ProductsController < ApplicationController
   def show  
     @comments = @product.comments.order("created_at  DESC").paginate(page:params[:page], per_page: 2)
     @product.viewed!
+    session[:product_id] = @product.id
   end
  
   def new

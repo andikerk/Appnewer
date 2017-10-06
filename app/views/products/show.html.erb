@@ -60,18 +60,31 @@
         <%if signed_in?%>
           <button class="btn btn-default btn-info purchase"  onclick = "showConditionsConsent()" >Purchase</button>
           <div id = "conditionsconsent">
-            <span>I have read</span> <%= link_to static_pages_imprint_path do%><span>
-            terms and conditions</span><%end%><span> and accept them.</span><input type="checkbox"   id="accept" 
-            onchange = "showStripebtn()"" ></input>
-            
-              <div id="stripebtn" onclick ="hideConditionsConsent()">
-                <%= form_tag "/payments/create" do %>
-                <%= hidden_field_tag(:product_id, @product.id) %>
-                <%= render partial: "shared/stripe_checkout_button" %>
-                <%end%>
-              </div>
+
+<!--check whether data is complete-->
+            <%if current_user.first_name? && current_user.last_name?%>
+
+                <p><span>I have read the</span> <%= link_to static_pages_imprint_path do%><span>
+                terms and conditions</span><%end%><span> and accept them.</span></p><input type="checkbox"   id="accept" 
+                onchange = "showStripebtn()"" ></input>
+                
+                  <div id="stripebtn" onclick ="hideConditionsConsent()">
+                    <%= form_tag "/payments/create" do %>
+                    <%= hidden_field_tag(:product_id, @product.id) %>
+                    <%= render partial: "shared/stripe_checkout_button" %>
+                    <%end%>
+                  </div>
           </div>
+
+            <%else%>
+                  
+                  <%= link_to edit_user_registration_path do%><p id = "fillout">Please fill out missing data first!</p><%end%>
+          </div>
+            <%end%>
         <%end%>
+
+
+          
   </div>
 
     
