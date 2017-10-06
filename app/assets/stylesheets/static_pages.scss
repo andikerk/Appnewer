@@ -647,7 +647,7 @@ footer{
 
 
 
-#red, #green, #blue {
+#red, #green, #blue, #opac {
 	margin: 10px;
 	display: inline-block;
 	height: 200px;
@@ -655,16 +655,16 @@ footer{
 
 #colorpicker {
 	height: 240px;
-	width: 310px;
+	width: 320px;
 	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid #BFBFBF;
 }
 
 #result {
-	margin: 60px 26px;
-	height: 100px;
-	width: 100px;
+	margin: 20px ;
+	height: 130px;
+	width: 80px;
 	display: inline-block;
 	vertical-align: top;
 	color: rgb(127, 127, 127);
@@ -674,7 +674,7 @@ footer{
 }
 
 #red .noUi-connect {
-	background: red;
+	background: #c0392b;
 }
 
 #green .noUi-connect {
@@ -683,4 +683,7 @@ footer{
 
 #blue .noUi-connect {
 	background: #2980b9;
+}
+#opac .noUi-connect {
+	background: #ffffff;
 }

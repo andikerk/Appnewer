@@ -17,5 +17,5 @@
 //= require jquery.raty
 //= require jquery.elevateZoom-3.0.8.min.js
 //= require jquery.matchHeight.js
-//= require nouislider.min.js
-
+//= require nouislider.js
+//= require wNumb.js

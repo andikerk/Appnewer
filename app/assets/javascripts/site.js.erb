@@ -19,6 +19,8 @@ var refreshRating = function(){
   });
 };
 
+//consent to terms and conditions--------------------------------
+
 function showConditionsConsent(){
   $('#conditionsconsent').show();
   $('#stripebtn').hide();
@@ -39,8 +41,11 @@ function showStripebtn(){
   } 
 }
 
-
-
+// ----------------------artisanry------------------------
+var rot;
+var gruen;
+var blau;
+var opak;
 var begin;
 var interval = 1000; 
 var sum = 0;  
@@ -70,45 +75,9 @@ var refreshCanvas = function(){
     c.width = 1800;
     c.height = 600;
 } 
-//--------------------------------------------------------------------------------
 
 
-function setColor(){
 
-  // Get the slider values,
-  // stick them together.
-  var color = 'rgb(' +
-    sliders[0].noUiSlider.get() + ',' +
-    sliders[1].noUiSlider.get() + ',' +
-    sliders[2].noUiSlider.get() + ')';
-
-  // Fill the color box.
-  resultElement.style.background = color;
-  resultElement.style.color = color;
-}
-
-var resultElement = document.getElementById('result'),
-  sliders = document.getElementsByClassName('sliders');
-
-for ( var i = 0; i < sliders.length; i++ ) {
-
-  noUiSlider.create(sliders[i], {
-    start: 127,
-    connect: [true, false],
-    orientation: "vertical",
-    range: {
-      'min': 0,
-      'max': 255
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-
-  // Bind the color changing function
-  // to the slide event.
-  sliders[i].noUiSlider.on('slide', setColor);
-}
 
 
 function drawLine(){if(begin == true){
@@ -119,23 +88,24 @@ function drawLine(){if(begin == true){
    //var color = `rgb(${Math.ceil(Math.random()*255 + 0)},${Math.ceil(Math.random()*255 +0 )},${Math.ceil(Math.random()*255 +0 )} )`;
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
+     // var red = (rot);//(`${rot}`);
       var red = Math.ceil(Math.random()*255);
       var green = Math.ceil(Math.random()*255);
       var blue = Math.ceil(Math.random()*255);
-      var a = 1;
+    // var a = (rot/255);
     //  var color =`rgb(${red}, ${green}, ${blue})`;
-      var color ="rgba" + "(" +(red)+ "," +(green)+ "," +(blue)+ "," +(a)+ ")";
-
+   // var kolor ="rgba" + "(" +(red)+ "," +(green)+ "," +(blue)+ "," +(a)+ ")";
+      var kolor ="rgba" + "(" +(rot)+ "," +(gruen)+ "," +(blau)+ "," +(opak)+ ")";
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
             var ctx=c.getContext("2d"); 
             ctx.beginPath();
             ctx.moveTo(x[i],y[i]);
             x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
             ctx.lineTo(x[i+1],y[i+1]);
-            ctx.strokeStyle = color;
+            ctx.strokeStyle = kolor;
             ctx.lineWidth = (Math.random()*30) + 5;
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = color;
+            ctx.shadowBlur = Math.random()*16;
+            ctx.shadowColor = kolor;
             ctx.stroke();
             x[i]=x[i+1];y[i]=y[i+1];
     }    
@@ -144,7 +114,7 @@ function drawLine(){if(begin == true){
     }
 }
 
-
+//--------------landing page--------------------------------------------------------
 function landingPage(){
 
   $('#pic1').on('load',function(){$('this').show();})
@@ -154,8 +124,9 @@ function landingPage(){
   
 }
 
+// range sliders----------------------------------------------------------------------
 
-
+//------------------document ready------------------------------------------------------------------------------
 
 $(document).on('turbolinks:load ajaxSuccess', function(){
 
@@ -197,6 +168,57 @@ window.cookieconsent.initialise({
   }*/,"theme": "classic"
 })});
 
+
+
+//---------------------------------Colorpicker-----------------------------------
+function setColor(){
+
+  // Get the slider values,
+  // stick them together.
+   rot = sliders[0].noUiSlider.get(); 
+   gruen = sliders[1].noUiSlider.get(); 
+   blau = sliders[2].noUiSlider.get(); 
+   opak = sliders[3].noUiSlider.get()/255; 
+ 
+
+  var color = 'rgba(' +
+    sliders[0].noUiSlider.get() + ',' +
+    sliders[1].noUiSlider.get() + ',' +
+    sliders[2].noUiSlider.get() + ',' +
+    (opak) + ')';
+
+  // Fill the color box.
+
+  resultElement.style.color = color;
+  resultElement.style.backgroundColor=color;
+
+
+}
+
+var resultElement = document.getElementById('result'),
+  sliders = document.getElementsByClassName('sliders');
+
+for ( var i = 0; i < sliders.length; i++ ) {
+
+  noUiSlider.create(sliders[i], {
+    start: 127,
+    connect: [true, false],
+    orientation: "vertical",
+    range: {
+      'min': 0,
+      'max': 255     
+    },
+    format: wNumb({
+      decimals: 0
+    })
+  });
+
+
+
+  // Bind the color changing function
+  // to the slide event.
+  sliders[i].noUiSlider.on('slide', setColor);
+}
 
 });
 
