@@ -9,12 +9,18 @@
 ===============================================
  
 
-<p>Hello <%=@user.username.capitalize%>, thank you for shopping with us!</p>
+<p>Hello <%=@user.first_name.capitalize%>, thank you for shopping with us!</p>
 
 <p>With "<%= @product.name%>, <%= @product.description%>" you made a truly excellent choice!
 On our behalf Stripe debited your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %>.</p>
 <p>Thank you and have a nice day!</p>
 <p>Your zweiradeins-team</p>
+<br/>
 
+<p>delivery address:</p>
+<p><%= user.first_name.capitalize%> <%= user.last_name.capitalize%></p>
+<p><%= user.zipcode%> <%= user.city%></p>
+<p><%= user.street%> <%= user.housenumber%></p>
+<p><%= user.country%></p>
   </body>
 </html>

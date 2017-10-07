@@ -9,3 +9,9 @@ With "<%= @product.name%>, <%= @product.description%>" you made a truly excellen
 On our behalf Stripe debited your account with <%= number_to_currency(@product.price.to_d/100,unit:"€") %>.
 Thank you and have a nice day!
 Your zweiradeins-team
+
+delivery address:
+<%= user.first_name.capitalize%> <%= user.last_name.capitalize%>
+<%= user.zipcode%> <%= user.city%>
+<%= user.street%> <%= user.housenumber%>
+<%= user.country%>

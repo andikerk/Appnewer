@@ -50,11 +50,12 @@ var begin;
 var interval = 1000; 
 var sum = 0;  
 var looplim;
+//var fac = 1;
 
 function startDraw(){ 
   refreshCanvas();
   begin = true;
-  looplim = 50;
+  looplim = 6;
   setInterval(function(){
     drawLine();
     },
@@ -89,9 +90,11 @@ function drawLine(){if(begin == true){
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
      // var red = (rot);//(`${rot}`);
-      var red = Math.ceil(Math.random()*255);
-      var green = Math.ceil(Math.random()*255);
-      var blue = Math.ceil(Math.random()*255);
+     // var red = Math.ceil(Math.random()*255);
+      //var green = Math.ceil(Math.random()*255);
+     // var blue = Math.ceil(Math.random()*255);
+
+    //  fac *= ( i + 1 );
     // var a = (rot/255);
     //  var color =`rgb(${red}, ${green}, ${blue})`;
    // var kolor ="rgba" + "(" +(red)+ "," +(green)+ "," +(blue)+ "," +(a)+ ")";
@@ -110,7 +113,7 @@ function drawLine(){if(begin == true){
             x[i]=x[i+1];y[i]=y[i+1];
     }    
     sum++;
-
+  //  fac = 1;
     }
 }
 

@@ -62,7 +62,7 @@
           <div id = "conditionsconsent">
 
 <!--check whether data is complete-->
-            <%if current_user.first_name? && current_user.last_name?%>
+            <%if current_user.first_name? && current_user.last_name? && current_user.country? && current_user.city? && current_user.street? && current_user.zipcode? && current_user.housenumber?%>
 
                 <p><span>I have read the</span> <%= link_to static_pages_imprint_path do%><span>
                 terms and conditions</span><%end%><span> and accept them.</span></p><input type="checkbox"   id="accept" 
