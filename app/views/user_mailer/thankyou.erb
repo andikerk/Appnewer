@@ -18,9 +18,9 @@ On our behalf Stripe debited your account with <%= number_to_currency(@product.p
 <br/>
 
 <p>delivery address:</p>
-<p><%= user.first_name.capitalize%> <%= user.last_name.capitalize%></p>
-<p><%= user.zipcode%> <%= user.city%></p>
-<p><%= user.street%> <%= user.housenumber%></p>
-<p><%= user.country%></p>
+<p><%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%></p>
+<p><%= @user.zipcode%> <%= @user.city%></p>
+<p><%= @user.street%> <%= @user.housenumber%></p>
+<p><%= @user.country%></p>
   </body>
 </html>
