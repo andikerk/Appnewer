@@ -7,7 +7,13 @@
 On our behalf Stripe debited your account with <%= number_to_currency(@order.total.to_d/100,unit:"€") %>.</p><br>
 <p>Thank you and have a nice day!</p>
 <p>Your zweiradeins Team.</p><br>
-<p><%= link_to "Back to Product", product_path(@product)%></p>
+<p><%= link_to "Back to Product", product_path(@product)%></p><br>
+
+<p>delivery address:</p>
+<p><%= current_user.first_name.capitalize%> <%= current_user.last_name.capitalize%></p>
+<p><%= current_user.zipcode%> <%= current_user.city%></p>
+<p><%= current_user.street%> <%= current_user.housenumber%></p>
+<p><%= current_user.country%></p>
 </div>
 
 
