@@ -22,7 +22,7 @@ var refreshRating = function(){
 //consent to terms and conditions--------------------------------
 
 function showConditionsConsent(){
-  $('#conditionsconsent').show();
+  $('#conditionsconsent').fadeIn();
   $('#stripebtn').hide();
 }
 
@@ -34,7 +34,7 @@ function showStripebtn(){
   var check = $("#accept").is(':checked');
 
   if(check === true){
-    $('#stripebtn').show();
+    $('#stripebtn').fadeIn();
   } 
   if(check === false){
     $('#stripebtn').hide();

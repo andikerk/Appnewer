@@ -1,6 +1,6 @@
 
 <div id="showorder">
-<p> Order:<%= @order.id%></p><br>
+<p> Order:<%= @order.id%> Created at: <%= @order.created_at%></p><br>
 <p>Hello <%= current_user.username.capitalize%>,</p><br><p>thank you for shopping with us!</p>
 <p>"<%= @product.name %>, <%= @product.description%>"</p>
 <p>is a truly excellent choice!
