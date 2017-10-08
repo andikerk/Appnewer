@@ -9,7 +9,7 @@ On our behalf Stripe debited your account with <%= number_to_currency(@order.tot
 <p>Your zweiradeins Team.</p><br>
 <p><%= link_to "Back to Product", product_path(@product)%></p><br>
 
-<p>delivery address:</p>
+<p>Delivery Address:</p>
 <p><%= current_user.first_name.capitalize%> <%= current_user.last_name.capitalize%></p>
 <p><%= current_user.zipcode%> <%= current_user.city%></p>
 <p><%= current_user.street%> <%= current_user.housenumber%></p>
