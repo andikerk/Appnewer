@@ -1,7 +1,7 @@
-<p>views/orders/index.html.erb</p>
-<p>hier sollte dann so etwas wie eine Rechnung stehen</p>
-<h1>Users</h1>
 
+<br>
+<h3>-------------------- Orders -------------------------</h3>
+<br>
 <table>
   <thead>
     <tr>
@@ -9,12 +9,13 @@
       <th>email-- </th>
       <th>username-- </th>
       <th>productname--</th>
-      <th>product.id--</th>
+      <th>product.id------</th>
+      <th>created at--</th>
       <th>total--</th>
       <th ></th>
     </tr>
   </thead>
-
+  <br>
   <tbody>
     <% @order.each do |order| %>
       <tr>
@@ -23,7 +24,8 @@
         <td><%= User.find(order.user_id).username %></td>
         <td><%= Product.find(order.product_id).name %></td>
         <td><%= order.product_id %></td>
-        <td><%= order.total %></td>
+        <td><%= order.created_at %></td>
+        <td><%= order.total/100 %></td>
         </td>
       </tr>
     <% end %>
