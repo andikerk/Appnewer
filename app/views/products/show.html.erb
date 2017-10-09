@@ -65,8 +65,8 @@
             <%if current_user.first_name? && current_user.last_name? && current_user.country? && current_user.city? && current_user.street? && current_user.zipcode? && current_user.housenumber?%>
 
                 <p><span>I have read the</span> <%= link_to static_pages_imprint_path do%><span>
-                terms and conditions</span><%end%><span> and accept them.</span></p><span><input type="checkbox"   id="accept" 
-                onchange = "showStripebtn()"" ></input></span>
+                terms and conditions</span><%end%><span> and accept them.</span><span><input type="checkbox"   id="accept" 
+                onchange = "showStripebtn()"" ></input></span></p>
                 
                   <div id="stripebtn" onclick ="hideConditionsConsent()">
                     <%= form_tag "/payments/create" do %>

@@ -8,7 +8,8 @@
       <%= form_for(resource, as: resource_name, url: user_path(@user), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
-        <h4>Change Data:  <%= @user.username.to_s.humanize %> </h4><br>
+        <h4>Change Data:  <%= @user.username.to_s.humanize %> </h4>
+        <br>
 
         <div class="field">
           <h5><strong> First Name</strong></h5><%#= f.label :first_Name %>
