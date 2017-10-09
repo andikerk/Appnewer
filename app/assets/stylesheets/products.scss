@@ -180,12 +180,10 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
 	text-align:center;
 	margin-bottom:5px;
 }
-
 .reviews p{
 	margin:10px;
 	margin-left:10px;
 }
-
 #showprodrow{
 	margin-top:50px;	
 	margin-left:0px;
@@ -200,12 +198,10 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
 	font-size:1em;
 	font-weight:bold;
 }
-
 #prodshowdescr h3{
 	text-align:center;
 	font-weight:bold;	
 }
-
 .zoomLens{
 	border:10px solid red;
 	width:300px;
@@ -213,32 +209,21 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
 #conditionsconsent{
 	position:absolute;
 	top:260px;
-
-
-	margin:auto;
-	//left:10px;
 	width:300px;
 	height:150px;
-
-
 	background-color:white;
 	border:2px solid black;
 	border-radius:7px;
 	display:none;
-
 	padding:15px;
 	z-index:10;
-
 }
 #accept{
-
 	position:relative;
 	right:-10px;
 	top:5px;
 	width:20px;
 	height:20px;
-
-
 }
 
 button.stripe-button-el{
