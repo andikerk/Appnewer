@@ -106,7 +106,7 @@ function drawLine(){if(begin == true){
             x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
             ctx.lineTo(x[i+1],y[i+1]);
             ctx.strokeStyle = kolor;
-            ctx.lineWidth = (Math.random()*30) + 5;
+            ctx.lineWidth = Math.random()*30 + 4;
             ctx.shadowBlur = Math.random()*16;
             ctx.shadowColor = kolor;
             ctx.stroke();
@@ -143,6 +143,8 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
+$('#test').animate({left:'30vw',top:'30vh',width: '45vw',height: '19.5vw'},3330);
+
 
 
 if(window.screen.width>800)

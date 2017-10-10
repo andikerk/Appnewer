@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, :except => [:about, :index, :contact, :thank_you, :landing_page, :imprint ]
-  def index	
+  before_action :authenticate_user!, :except => [:about, :repairs, :contact, :thank_you, :landing_page, :imprint ]
+  def repairs	
   end
 
   def about 	

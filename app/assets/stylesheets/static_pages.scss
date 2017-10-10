@@ -362,10 +362,10 @@ footer{
     50% {top:-12rem;}
     100% {top:1rem;}
 }
-// --------------indexpage(REPAIR)------------------------
+// --------------REPAIRS)------------------------
 #repairdiv{
 	height:600px;
-	background-image:url("https://www.kristimountainsports.com/images/photos/IMG_0230.JPG");
+	background-image:url("https://extremewheels.com/wp-content/uploads/2016/08/Model-Changing-Flat-Tire-1080x675.jpg");
 	background-size:cover;
 	overflow:hidden;
 
@@ -383,6 +383,19 @@ footer{
 	left:-10vw;
 	
 	transform:rotateZ(-10deg);
+}
+#test{
+	width:0vw;
+	height:vw;
+	//background-color:red;
+	background-image:url("/assets/hammer.png");
+	background-size:cover;
+	position:absolute;
+	top:0vh;
+	left:0vw;
+	z-index:1;
+	overflow:hidden;
+	transform:rotateZ(30deg);
 }
 //-----------------------------------navbar-----------------------------------------//
 .navbar-collapse.collapse{
@@ -692,4 +705,19 @@ footer{
 }
 #opac .noUi-connect {
 	background: #ffffff;
+}
+#red .noUi-handle{
+	background-color:red;
+}
+#green .noUi-handle{
+	background-color:green;
+}
+#blue .noUi-handle{
+	background-color:blue;
+}
+#opac .noUi-handle{
+	background-color:gray;
+}
+.noUi-handle{
+	border-radius:20%;
 }
