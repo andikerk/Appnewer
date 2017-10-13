@@ -128,6 +128,8 @@ function landingPage(){
   
 }
 
+
+
 // range sliders----------------------------------------------------------------------
 
 //------------------document ready------------------------------------------------------------------------------
@@ -142,7 +144,7 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   $('.notice').delay(3000).fadeOut(2000);
 //--------------repairs page------------------------------
 
-  $('#test').animate({left:'30vw',top:'30vh',width: '45vw',height: '19.5vw'},3330).delay(5000).animate({left:'80vw',top:'0vh',width: '0vw',height: '0vw'},3330);
+  $('#test').animate({left:'40vw',top:'20vh',width: '45vw',height: '19.5vw'},3330).delay(3000).animate({left:'60vw',top:'0vh',width: '0vw',height: '0vw'},3330);
 //----------------product show view------------------------------  
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
@@ -219,12 +221,38 @@ for ( var i = 0; i < sliders.length; i++ ) {
     })
   });
 
-
-
   // Bind the color changing function
   // to the slide event.
   sliders[i].noUiSlider.on('slide', setColor);
 }
+
+
+var Zeit = 1500;
+var TEXT = ['"Great People"','"Amazing bicycles"','"I recommend it"','"THE place to go!"',
+'"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"'];
+var KOL =["red", "yellow", "white", "darkred", "orange"];
+setInterval(function(){  var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+                          var T =Math.floor(TEXT.length*Math.random());
+                          var S = Math.random()*1.5+.5 + "em";
+                          var K = Math.floor(KOL.length*Math.random());
+
+
+
+  $('#schnecke').html(TEXT[T]).css('color',KOL[K]).css({'left':X,'top':Y,'font-size':S})
+  .fadeIn(Zeit*.2).delay(Zeit*.5).fadeOut(Zeit*.2);},Zeit);
+
+var Zeit1 = 5000;
+
+setInterval(function(){  var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+                          var T =Math.floor(TEXT.length*Math.random());
+                          var S = Math.random()*1.5+.5 + "em";
+                          var K = Math.floor(KOL.length*Math.random());
+
+  $('#schnecke1').html(TEXT[T]).css('color',KOL[K]).css({'right':X,'top':Y,'font-size':S})
+  .fadeIn(Zeit1*.3).delay(Zeit1*.3).fadeOut(Zeit1*.3);},Zeit1);
+
+
+
 
 });
 
