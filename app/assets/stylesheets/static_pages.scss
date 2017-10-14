@@ -62,60 +62,10 @@ footer{
 
 //---------------------------------landing_page---------------------------------------//
 
-#landhead{
-	color:red;
-	text-align:center;
-	margin-top:70px;
-}
-#landhead{
-	color:white;
-	font-weight:900;
-	font-style: italic;
-	font-family:serif;
-	text-align:center;
-	margin-top:50px;
-	margin-bottom:0;
-	padding:.5em;
-	text-shadow:  -5px -5px 20px red;
-	background-color:#DB7B3B;
-	border-top:5px ridge lightblue;
-	
-}
-#carouselcont{
-	border: 2px solid black;
-}
-#carouselneighbor{
-	border:2px solid green;
-	background:green;
-}
-#slide{
-	display:block;
-	margin:auto;
 
-	
+.embed-responsive.embed-responsive-3by2{
+	padding-bottom:66.6%;	
 }
-.carousel.slide{
-	background:linear-gradient(#DB7B3B,#1A8A7D);
-}
-.carousel-control{
-
-}
-
-
-#prodpricel{
-	font-size:1.7em;
-	font-weight:700;
-	padding:20px;
-	color:red;
-	text-shadow:0px 0px 17px white;
-}
-
-----------------------landing page new version---
-
-#magic {
-	padding-top:200px;	
-}
-
 
 #pic1{
 	display:none;
@@ -231,7 +181,7 @@ footer{
     100% {opacity:0;}
 }
 
-#schnecke{
+#schnecke,#schnecke1{
 	display:block;
 	position:absolute;
 	top:70px;
@@ -244,19 +194,7 @@ footer{
 	line-height:120%;
 	border-radius:5px;
 }
-#schnecke1{
-	display:block;
-	position:absolute;
-	top:50px;
-	right:15vw;
-	font-size:1em;
-	font-weight:900;
-	z-index:19;
-	background-color:white;
-	padding:6px;
-	line-height:120%;
-	border-radius:5px;
-}
+
 
 #linktag{
 	text-decoration:none;

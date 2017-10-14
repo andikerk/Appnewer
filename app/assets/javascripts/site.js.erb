@@ -1,4 +1,4 @@
-
+//----------------------raty---------------------------------------
 var refreshRating = function(){
 
   $('.rating').raty({
@@ -29,7 +29,7 @@ function showConditionsConsent(){
 function hideConditionsConsent(){
   $('#conditionsconsent').hide();
 }
-
+//---------------stripe----------------------------------
 function showStripebtn(){
   var check = $("#accept").is(':checked');
 
@@ -50,7 +50,6 @@ var begin;
 var interval = 1000; 
 var sum = 0;  
 var looplim;
-//var fac = 1;
 
 function startDraw(){ 
   refreshCanvas();
@@ -77,27 +76,12 @@ var refreshCanvas = function(){
     c.height = 600;
 } 
 
-
-
-
-
 function drawLine(){if(begin == true){
     var c=document.getElementById("myCanvas");
     var x = []; var y =[] ;
-   // var color = `#${(Math.floor(Math.random()*2560) + 0 ).toString(16)}`;
-   //var color = `rgb(${Math.floor(Math.random()*256),0,0 })`;
-   //var color = `rgb(${Math.ceil(Math.random()*255 + 0)},${Math.ceil(Math.random()*255 +0 )},${Math.ceil(Math.random()*255 +0 )} )`;
     var picno = Math.floor(Math.random()*3)*600;
     for (var i =  0; i <Math.random()*looplim; i++ ){
-     // var red = (rot);//(`${rot}`);
-     // var red = Math.ceil(Math.random()*255);
-      //var green = Math.ceil(Math.random()*255);
-     // var blue = Math.ceil(Math.random()*255);
 
-    //  fac *= ( i + 1 );
-    // var a = (rot/255);
-    //  var color =`rgb(${red}, ${green}, ${blue})`;
-   // var kolor ="rgba" + "(" +(red)+ "," +(green)+ "," +(blue)+ "," +(a)+ ")";
       var kolor ="rgba" + "(" +(rot)+ "," +(gruen)+ "," +(blau)+ "," +(opak)+ ")";
             x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
             var ctx=c.getContext("2d"); 
@@ -110,11 +94,9 @@ function drawLine(){if(begin == true){
             ctx.shadowBlur = Math.random()*16;
             ctx.shadowColor = kolor;
             ctx.stroke();
-            x[i]=x[i+1];y[i]=y[i+1];
-           
+            x[i]=x[i+1];y[i]=y[i+1];          
     }
     sum++;
-  //  fac = 1;
     }
 }
 
@@ -124,19 +106,62 @@ function landingPage(){
   $('#pic1').on('load',function(){$('this').show();})
   $('#pic2').on('load',function(){$('#pic1,this').show();})
   $('#pic3').on('load',function(){$('#pic1,#pic2,#pic3').show();})
-  $('#pic1,#pic2,#pic3').css("animation-play-state","running");
-  
+  $('#pic1,#pic2,#pic3').css("animation-play-state","running"); 
 }
 
+//----------------fake credentials----------------------------
+
+var landpage;
 
 
-// range sliders----------------------------------------------------------------------
+var TEXT = ['"Great People"','"Amazing bicycles"','"I recommend it"','"THE place to go!"',
+'"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"','"They did a great job!"',
+'"excellent!"'];
 
-//------------------document ready------------------------------------------------------------------------------
+var KOL =["red", "darkblue", "darkgreen", "darkred", "orange"];
+var Zeit = 3000; 
+
+var credent = function(){
+   if(landpage === true){
+   var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+   var T =Math.floor(TEXT.length*Math.random());
+   var S = Math.random()*1.5+.5 + "em";
+   var K = Math.floor(KOL.length*Math.random());
+   var show = Math.random()*Zeit + 1000;
+
+  $('#schnecke').html(TEXT[T]).css('color',KOL[K]).css({'left':X,'top':Y,'font-size':S})
+  .fadeIn(1000,"swing").delay(show).fadeOut(1000,"swing");  
+  setTimeout(credent,Zeit*2);
+  }  
+}
+ 
+var credent1 = function(){
+   if(landpage === true){
+   var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+   var T =Math.floor(TEXT.length*Math.random());
+   var S = Math.random()*1.5+.5 + "em";
+   var K = Math.floor(KOL.length*Math.random());
+   var show1 = Math.random()*Zeit/2 + 500;
+   
+  $('#schnecke1').html(TEXT[T]).css('color',KOL[K]).css({'left':X,'top':Y,'font-size':S})
+  .fadeIn(500,"swing").delay(show1).fadeOut(500,"swing");  
+  setTimeout(credent1,Zeit);
+  }  
+}       
+      
+
+//=============document ready================================================================
 
 $(document).on('turbolinks:load ajaxSuccess', function(){
 
+  landpage = false;
+  if(window.location.pathname == "/" || window.location.pathname =="/static_pages/landing_page"){
+  landpage = true;
+  }
+
   landingPage();
+  credent();
+  credent1();
   looplim = 0;
   refreshRating();
 
@@ -144,7 +169,8 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   $('.notice').delay(3000).fadeOut(2000);
 //--------------repairs page------------------------------
 
-  $('#test').animate({left:'40vw',top:'20vh',width: '45vw',height: '19.5vw'},3330).delay(3000).animate({left:'60vw',top:'0vh',width: '0vw',height: '0vw'},3330);
+  $('#test').animate({left:'40vw',top:'20vh',width: '45vw',height: '19.5vw'},3330)
+  .delay(3330).animate({left:'60vw',top:'0vh',width: '0vw',height: '0vw'},3330);
 //----------------product show view------------------------------  
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
@@ -157,7 +183,7 @@ if(window.screen.width>800)
       lensSize: 200
     });
 } 
-
+//-------------cookie consent-------------------------------
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -178,7 +204,7 @@ window.cookieconsent.initialise({
 
 
 
-//---------------------------------Colorpicker-----------------------------------
+//---------------------------------Colorpicker/artisanry-----------------------------------
 function setColor(){
 
   // Get the slider values,
@@ -188,7 +214,6 @@ function setColor(){
    blau = sliders[2].noUiSlider.get(); 
    opak = sliders[3].noUiSlider.get()/255; 
  
-
   var color = 'rgba(' +
     sliders[0].noUiSlider.get() + ',' +
     sliders[1].noUiSlider.get() + ',' +
@@ -199,8 +224,6 @@ function setColor(){
 
   resultElement.style.color = color;
   resultElement.style.backgroundColor=color;
-
-
 }
 
 var resultElement = document.getElementById('result'),
@@ -220,17 +243,15 @@ for ( var i = 0; i < sliders.length; i++ ) {
       decimals: 0
     })
   });
-
-  // Bind the color changing function
-  // to the slide event.
+  // Bind the color changing function to the slide event.
   sliders[i].noUiSlider.on('slide', setColor);
 }
 
-
+/*
 var Zeit = 1500;
 var TEXT = ['"Great People"','"Amazing bicycles"','"I recommend it"','"THE place to go!"',
-'"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"'];
-var KOL =["red", "darkyellow", "black", "darkred", "orange"];
+'"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"','"They did a great job!"'];
+var KOL =["red", "yellow", "violet", "darkred", "orange"];
 setInterval(function(){  var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
                           var T =Math.floor(TEXT.length*Math.random());
                           var S = Math.random()*1.5+.5 + "em";
@@ -243,7 +264,7 @@ setInterval(function(){  var X = Math.random()*50+"vw"; var Y = Math.random()*40
 
 var Zeit1 = 5000;
 
-setInterval(function(){  var X = Math.random()*80 +20+"vw"; var Y = Math.random()*40+"vw";
+setInterval(function(){  var X = Math.random()*80 + "vw"; var Y = Math.random()*40+"vw";
                           var T =Math.floor(TEXT.length*Math.random());
                           var S = Math.random()*1.5+.5 + "em";
                           var K = Math.floor(KOL.length*Math.random());
@@ -251,7 +272,7 @@ setInterval(function(){  var X = Math.random()*80 +20+"vw"; var Y = Math.random(
   $('#schnecke1').html(TEXT[T]).css('color',KOL[K]).css({'right':X,'top':Y,'font-size':S})
   .fadeIn(Zeit1*.3).delay(Zeit1*.3).fadeOut(Zeit1*.3);},Zeit1);
 
-
+*/
 
 
 });

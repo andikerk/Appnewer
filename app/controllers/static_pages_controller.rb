@@ -18,9 +18,8 @@ class StaticPagesController < ApplicationController
   end
 
   def landing_page
-  	#@products = Product.limit(3)    #where("id%2=1").reverse
+  	
   end
-
   def imprint
   end
 end
