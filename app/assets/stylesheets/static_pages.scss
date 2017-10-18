@@ -29,6 +29,26 @@ body{
 	width:100vw;
 	margin:0;	
 }
+#byeBye{
+	display:none;
+	//margin:auto;
+	position:absolute;
+	//text-align:center;
+	top:150px;
+	width:100%;
+	height:70px;
+	z-index:1000000;	
+}
+#byeBye h3{
+	width:320px;
+	display:block;
+	margin:auto;
+	background-color:white;
+	text-align:center;
+	padding:7px;
+	border:1px solid green;
+	border-radius:10px;
+}
 
 footer{
 	height:50px;
@@ -203,7 +223,7 @@ footer{
 
 // --------------repairs------------------------
 #repairdiv{
-	height:600px;
+	
 	background-image:url("https://extremewheels.com/wp-content/uploads/2016/08/Model-Changing-Flat-Tire-1080x675.jpg");
 	background-size:cover;
 	overflow:hidden;
@@ -211,31 +231,20 @@ footer{
 
 }
 #tirefix{
-	background-color:orange;
-	color:darkred;
+	background-color:transparent;
+	color:red;
 	font-weight:700;
-	padding:.3em;
+	//padding:.3em;
 	text-align:center;
-	position:relative;
+	position:absolute;
 	width:120%;
-	top:250px;
+	top:50%;
 	left:-10vw;
-	
+	text-shadow: 2px 2px 2px black;
 	transform:rotateZ(-10deg);
 }
-#test{
-	width:0vw;
-	height:vw;
-	//background-color:red;
-	background-image:image-url('hammer.png');
-	background-size:cover;
-	position:absolute;
-	top:0vh;
-	left:50vw;
-	z-index:1;
-	overflow:hidden;
-	transform:rotateZ(30deg);
-}
+
+
 //-----------------------------------navbar-----------------------------------------//
 .navbar-collapse.collapse{
 	margin-left:-15px;
@@ -505,7 +514,7 @@ footer{
 
 
 
-#red, #green, #blue, #opac {
+#red, #green, #blue, #opac, #lineWidth {
 	margin: 10px;
 	display: inline-block;
 	height: 200px;
@@ -514,20 +523,22 @@ footer{
 #colorpicker {
 	height: 240px;
 	width: 320px;
-	margin: 0 auto;
+	margin: auto;
+	margin-bottom:20px;
+	margin-top:20px;
 	padding: 10px;
 	border: 1px solid #BFBFBF;
 }
 
 #result {
-	margin: 20px ;
-	height: 130px;
-	width: 80px;
+	margin: 10px ;
+	height: 200px;
+	width: 25px;
 	display: inline-block;
 	vertical-align: top;
 	color: rgb(127, 127, 127);
 	background: rgb(127, 127, 127);
-	border: 1px solid #fff;
+	border: .1px solid black;
 	box-shadow: 0 0 10px;
 }
 
@@ -542,8 +553,14 @@ footer{
 #blue .noUi-connect {
 	background: #2980b9;
 }
-#opac .noUi-connect {
+
+#opac .noUi-base, #opac .noUi-connect {
+	background: grey;
+}
+
+#lineWidth .noUi-connect {
 	background: #ffffff;
+
 }
 #red .noUi-handle{
 	background-color:red;
@@ -557,6 +574,10 @@ footer{
 #opac .noUi-handle{
 	background-color:gray;
 }
+#lineWidth .noUi-handle{
+	background-color:gray;
+}
+
 .noUi-handle{
-	border-radius:20%;
+	border-radius:50%;
 }

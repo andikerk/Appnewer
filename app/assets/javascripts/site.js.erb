@@ -46,6 +46,7 @@ var rot;
 var gruen;
 var blau;
 var opak;
+var lineWidth =25;
 var begin;
 var interval = 1000; 
 var sum = 0;  
@@ -54,7 +55,7 @@ var looplim;
 function startDraw(){ 
   refreshCanvas();
   begin = true;
-  looplim = 6;
+  looplim = 4;
   setInterval(function(){
     drawLine();
     },
@@ -88,17 +89,32 @@ function drawLine(){if(begin == true){
             ctx.beginPath();
             ctx.moveTo(x[i],y[i]);
             x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
+           if(i%3 == 0){
             ctx.lineTo(x[i+1],y[i+1]);
+          }
+           if(i%3 == 1 ){
+            ctx.quadraticCurveTo(600- y[i] + picno, x[i] -picno, x[i+1], y[i+1]);
+          }
+          if (i%3 == 2){
+            ctx.bezierCurveTo( picno, 0, 600 + picno, 0, x[i+1], y[i+1]);
+          }
             ctx.strokeStyle = kolor;
-            ctx.lineWidth = Math.random()*30 + 4;
-            ctx.shadowBlur = Math.random()*16;
-            ctx.shadowColor = kolor;
+
+            ctx.lineWidth = lineWidth;
+            console.log(lineWidth);
+           // ctx.shadowBlur = 10;
+           // ctx.shadowColor = kolor;
             ctx.stroke();
-            x[i]=x[i+1];y[i]=y[i+1];          
+            x[i]=x[i+1];y[i]=y[i+1];  
+
+       
     }
     sum++;
     }
+
 }
+
+
 
 //--------------landing page--------------------------------------------------------
 function landingPage(){
@@ -116,7 +132,7 @@ var landpage;
 
 var TEXT = ['"Great People"','"Amazing bicycles"','"I recommend it"','"THE place to go!"',
 '"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"','"They did a great job!"',
-'"excellent!"'];
+'"excellent!"','"They know what they\'re doing"'];
 
 var KOL =["red", "darkblue", "darkgreen", "darkred", "orange"];
 var Zeit = 3000; 
@@ -139,7 +155,7 @@ var credent1 = function(){
    if(landpage === true){
    var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
    var T =Math.floor(TEXT.length*Math.random());
-   var S = Math.random()*1.8+.4 + "em";
+   var S = Math.random()*1.8+.5 + "em";
    var K = Math.floor(KOL.length*Math.random());
    var show1 = Math.random()*Zeit/2 + 500;
    
@@ -154,23 +170,35 @@ var credent1 = function(){
 
 $(document).on('turbolinks:load ajaxSuccess', function(){
 
+
+  $('.alert').delay(3000).fadeOut(2000);
+  $('.notice').delay(3000).fadeOut(2000);
+
+//-----landing_page fake credentials------
   landpage = false;
   if(window.location.pathname == "/" || window.location.pathname =="/static_pages/landing_page"){
   landpage = true;
   }
 
-  landingPage();
   credent();
   credent1();
-  looplim = 0;
-  refreshRating();
+//--------landing_page images
+  landingPage();
 
-  $('.alert').delay(3000).fadeOut(2000);
-  $('.notice').delay(3000).fadeOut(2000);
+
+
+
+
+
+
+
 //--------------repairs page------------------------------
 
   $('#test').animate({left:'40vw',top:'20vh',width: '45vw',height: '19.5vw'},3330)
-  .delay(3330).animate({left:'60vw',top:'0vh',width: '0vw',height: '0vw'},3330);
+  .delay(3330).animate({left:'40vw',top:'200vh',width: '0vw',height: '0vw'},3330);
+
+
+
 //----------------product show view------------------------------  
 // elevateZoom freezes mobile devices, so only for larger screens
 // elevateZoom is in vendor/assets
@@ -183,6 +211,13 @@ if(window.screen.width>800)
       lensSize: 200
     });
 } 
+//-------------raty plugin
+refreshRating();
+
+$('#logout').on('click',function(){
+  $('#byeBye').css("display","block");
+})
+
 //-------------cookie consent-------------------------------
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
@@ -203,78 +238,66 @@ window.cookieconsent.initialise({
 })});
 
 
+//----------about_page/ artisanry------------------
+  looplim = 0;
 
 //---------------------------------Colorpicker/artisanry-----------------------------------
-function setColor(){
+  function setColor(){
 
-  // Get the slider values,
-  // stick them together.
-   rot = sliders[0].noUiSlider.get(); 
-   gruen = sliders[1].noUiSlider.get(); 
-   blau = sliders[2].noUiSlider.get(); 
-   opak = sliders[3].noUiSlider.get()/255; 
+    // Get the slider values,
+    // stick them together.
+     rot = sliders[0].noUiSlider.get(); 
+     gruen = sliders[1].noUiSlider.get(); 
+     blau = sliders[2].noUiSlider.get(); 
+     opak = sliders[3].noUiSlider.get()/255; 
+     lineWidth = sliders[4].noUiSlider.get()/5; 
+   
+    var color = 'rgba(' +
+      sliders[0].noUiSlider.get() + ',' +
+      sliders[1].noUiSlider.get() + ',' +
+      sliders[2].noUiSlider.get() + ',' +
+      (opak) + ')';
+
+    // Fill the color box.
+
+     $('#result').css("width",lineWidth);
+     $('#opac .noUi-base, #opac .noUi-connect, #opac').css("background-color", color);
+     $('#red .noUi-connect').css("background-color","rgba(" +(rot)+ ", 0 , 0 , 1)");
+     $('#green .noUi-connect').css("background-color","rgba( 0 ,"+ (gruen) +" , 0 , 1)");
+     $('#blue .noUi-connect').css("background-color","rgba( 0 , 0, "+ (blau) +" , 1)");
+      resultElement.style.color = color;
+      resultElement.style.backgroundColor=color;
+    }
+
+  var resultElement = document.getElementById('result'),
+    sliders = document.getElementsByClassName('sliders');
+
+  for ( var i = 0; i < sliders.length; i++ ) {
+
+    noUiSlider.create(sliders[i], {
+      start: 127,
+      connect: [true, false],
+      orientation: "vertical",
+      range: {
+        'min': 0,
+        'max': 255     
+      },
+      format: wNumb({
+        decimals: 0
+      })
+    });
+    // Bind the color changing function to the slide event.
+    sliders[i].noUiSlider.on('slide', setColor);
+  }
  
-  var color = 'rgba(' +
-    sliders[0].noUiSlider.get() + ',' +
-    sliders[1].noUiSlider.get() + ',' +
-    sliders[2].noUiSlider.get() + ',' +
-    (opak) + ')';
 
-  // Fill the color box.
-
-  resultElement.style.color = color;
-  resultElement.style.backgroundColor=color;
-}
-
-var resultElement = document.getElementById('result'),
-  sliders = document.getElementsByClassName('sliders');
-
-for ( var i = 0; i < sliders.length; i++ ) {
-
-  noUiSlider.create(sliders[i], {
-    start: 127,
-    connect: [true, false],
-    orientation: "vertical",
-    range: {
-      'min': 0,
-      'max': 255     
-    },
-    format: wNumb({
-      decimals: 0
-    })
-  });
-  // Bind the color changing function to the slide event.
-  sliders[i].noUiSlider.on('slide', setColor);
-}
-
-/*
-var Zeit = 1500;
-var TEXT = ['"Great People"','"Amazing bicycles"','"I recommend it"','"THE place to go!"',
-'"Friendly staff"','"So competent!"','"Nice guys!"','"You should go there!"','"They did a great job!"'];
-var KOL =["red", "yellow", "violet", "darkred", "orange"];
-setInterval(function(){  var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
-                          var T =Math.floor(TEXT.length*Math.random());
-                          var S = Math.random()*1.5+.5 + "em";
-                          var K = Math.floor(KOL.length*Math.random());
-
-
-
-  $('#schnecke').html(TEXT[T]).css('color',KOL[K]).css({'left':X,'top':Y,'font-size':S})
-  .fadeIn(Zeit*.2).delay(Zeit*.5).fadeOut(Zeit*.2);},Zeit);
-
-var Zeit1 = 5000;
-
-setInterval(function(){  var X = Math.random()*80 + "vw"; var Y = Math.random()*40+"vw";
-                          var T =Math.floor(TEXT.length*Math.random());
-                          var S = Math.random()*1.5+.5 + "em";
-                          var K = Math.floor(KOL.length*Math.random());
-
-  $('#schnecke1').html(TEXT[T]).css('color',KOL[K]).css({'right':X,'top':Y,'font-size':S})
-  .fadeIn(Zeit1*.3).delay(Zeit1*.3).fadeOut(Zeit1*.3);},Zeit1);
-
-*/
-
-
+ //if (navigator.geolocation) {
+ // navigator.geolocation.getCurrentPosition(function(position) {
+ //   $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+ // });
+//}
+var now = new Date();
+$('#data').html(now + now.toLocaleTimeString() + now.toDateString() + now.getHours() + now.getMinutes() + now.getMilliseconds());
 });
 
 
