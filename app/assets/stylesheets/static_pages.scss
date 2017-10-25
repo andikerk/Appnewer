@@ -230,18 +230,20 @@ footer{
 
 
 }
-#tirefix{
-	background-color:transparent;
-	color:red;
-	font-weight:700;
-	//padding:.3em;
-	text-align:center;
+#tirefix{	
 	position:absolute;
-	width:120%;
-	top:50%;
-	left:-10vw;
+	width:400%;
+	top:30%;
+	
+	transform:rotateZ(-5deg);
+}
+#tirefix h2{
+	color:red;
 	text-shadow: 2px 2px 2px black;
-	transform:rotateZ(-10deg);
+	font-weight:900;
+	font-size:8vw;
+	position:relative;
+	background-color:transparent;	
 }
 
 
@@ -490,15 +492,15 @@ footer{
 }
 #myCanvas{
    width:100%;
-   style-width:2000;
+   height:100%;
+   style-width:.1;
+
    // height:50vw;
    
     border:1px solid #d3d3d3;
     z-index:1;
-   // background-color:linen;
-//background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
 #socket button.btn.btn-small{
 	margin:4px;
 }
@@ -507,15 +509,14 @@ footer{
 	width:320px;
 	margin:auto;
 }
-#socket{
-	
+#iter{
+	width: 100px;
+	display:block;
+	margin:auto;
 }
 
-
-
-
-#red, #green, #blue, #opac, #lineWidth {
-	margin: 10px;
+#red, #green, #blue, #opac, #lineWidth, #pause {
+	margin: 7px;
 	display: inline-block;
 	height: 200px;
 }
@@ -528,18 +529,28 @@ footer{
 	margin-top:20px;
 	padding: 10px;
 	border: 1px solid #BFBFBF;
+	background-color:black;
 }
-
-#result {
+#resultwrapper{
 	margin: 10px ;
+	margin-top:7.5px;
 	height: 200px;
-	width: 25px;
+	width: 52.5px;
 	display: inline-block;
 	vertical-align: top;
+	background:black;
+	border-radius:3px;
+}
+#result {
+	display:block;
+	//margin:auto;
+	height:200px;
+	width:25px;
 	color: rgb(127, 127, 127);
 	background: rgb(127, 127, 127);
-	border: .1px solid black;
-	box-shadow: 0 0 10px;
+	//box-shadow: 0 0 10px;
+	border-left:1px solid white;
+	border-right:1px solid white;
 }
 
 #red .noUi-connect {
@@ -579,5 +590,29 @@ footer{
 }
 
 .noUi-handle{
-	border-radius:50%;
+	border-radius:3px;
+	height:34px
+}
+#pause .noUi-handle{
+	margin-left:-5px;
+	width:37px;
+	//height:37px;
+	background-color:pink;
+	border-radius:3px;
+}
+#opac .noUi-handle{
+	width:28px;
+	//height:37px;
+	background-color:pink;
+	border-radius:3px;
+}
+#lineWidth .noUi-handle{
+	margin-left:-5px;
+	width:37px;
+	//height:35px;
+	background-color:pink;
+	border-radius:3px;
+}
+#pause.noUi-target{
+	width:1px;
 }

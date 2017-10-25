@@ -21,8 +21,16 @@
 		<button class= "btn btn-small" onclick = "stopDraw()"> Halt </button>
 		<button class= "btn btn-small" onclick = "carryOn()"> Continue </button>
 		<button class= "btn btn-small" onclick = "clearThis()"> Clear </button>
+		
+ <input type="number" id="iter" value = "1" placeholder = "no of iterations"></input>
 	</div>
 </div>
+
+
+
+
+
+
 
 <div id="colorpicker">
 	
@@ -30,10 +38,13 @@
 	<div class="sliders" id="green"></div>
 	<div class="sliders" id="blue"></div>
 	<div class="sliders" id="opac"></div>
+	
+	
 	<div class="sliders" id="lineWidth"></div>
-
-	<div id="result"></div>	
-
+	<div id = "resultwrapper">
+		<div id="result"></div>	
+	</div>
+	<div class="sliders" id="pause"></div>
 </div>
 
 

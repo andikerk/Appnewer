@@ -42,77 +42,115 @@ function showStripebtn(){
 }
 
 // ----------------------artisanry------------------------
-var rot;
-var gruen;
-var blau;
-var opak;
-var lineWidth =25;
+var rot = 127;
+var gruen = 127;
+var blau = 127;
+var opak = .5;
+var lineWidth = 25;
 var begin;
-var interval = 1000; 
+var pause = 200;
 var sum = 0;  
 var looplim;
+
+
+
+
+
 
 function startDraw(){ 
   refreshCanvas();
   begin = true;
-  looplim = 4;
-  setInterval(function(){
-    drawLine();
-    },
-    interval); 
+  //looplim = 1000;
+  looplim = $('#iter').val();
+  drawLine();
 }
 
 function stopDraw(){
   begin = false;
+
 }
 function carryOn(){
   begin = true; 
+  drawLine();
 }
 function clearThis(){
   location.reload(); 
+
 }
 var refreshCanvas = function(){
   var c=document.getElementById("myCanvas");
-    c.width = 1800;
-    c.height = 600;
+    c.width = 3600;
+    c.height = 1200;
 } 
 
 function drawLine(){if(begin == true){
     var c=document.getElementById("myCanvas");
     var x = []; var y =[] ;
-    var picno = Math.floor(Math.random()*3)*600;
-    for (var i =  0; i <Math.random()*looplim; i++ ){
+    var piccol = Math.floor(Math.random()*6)*600;
+    var picrow = Math.floor(Math.random()*2)*600;
+    looplim = $('#iter').val(); 
 
-      var kolor ="rgba" + "(" +(rot)+ "," +(gruen)+ "," +(blau)+ "," +(opak)+ ")";
-            x[0] = Math.random()*600 + picno; y[0] = Math.random()*600;
+    for (var i =  0; i <looplim; i++ ){
+            var kolor ="rgba" + "(" +rot+ "," +gruen+ "," +blau+ "," +opak+ ")";
+           // var kolor ="rgba" + "(" +Math.floor(Math.random()*255)+ "," 
+           // +Math.floor(Math.random()*255)+ "," 
+           // +Math.floor(Math.random()*255)+ "," +1+ ")";
+            x[0] = Math.random()*600 + piccol; y[0] = Math.random()*600 + picrow;
             var ctx=c.getContext("2d"); 
             ctx.beginPath();
             ctx.moveTo(x[i],y[i]);
-            x[i+1] = Math.random()*600 + picno; y[i+1] = [Math.random()*600];
-           if(i%3 == 0){
+            x[i+1] = Math.random()*600 + piccol; y[i+1] = [Math.random()*600 + picrow];
+            var z = Math.floor(Math.random()*3);
+           if(z < -3){
             ctx.lineTo(x[i+1],y[i+1]);
           }
-           if(i%3 == 1 ){
-            ctx.quadraticCurveTo(600- y[i] + picno, x[i] -picno, x[i+1], y[i+1]);
+           if(z <3 ){
+           // ctx.quadraticCurveTo(600- y[i] + picno, x[i] -picno, x[i+1], y[i+1]);
+            ctx.quadraticCurveTo(600*Math.random() + piccol, 600*Math.random() + picrow, x[i+1], y[i+1]);
           }
-          if (i%3 == 2){
-            ctx.bezierCurveTo( picno, 0, 600 + picno, 0, x[i+1], y[i+1]);
+          if (z < 0){
+            ctx.bezierCurveTo( piccol + Math.random()*600, Math.random()*600 + picrow, piccol + Math.random()*600,
+            Math.random()*600 + picrow, x[i+1], y[i+1]);
           }
             ctx.strokeStyle = kolor;
 
             ctx.lineWidth = lineWidth;
-            console.log(lineWidth);
-           // ctx.shadowBlur = 10;
-           // ctx.shadowColor = kolor;
+
+          //  ctx.shadowBlur = 5;
+           // ctx.shadowColor = "rgba(255,255," + (255 - .1 *sum) + ", 1)";
             ctx.stroke();
             x[i]=x[i+1];y[i]=y[i+1];  
 
-       
+            looplim = $('#iter').val();  
+           //  console.log(numero);
     }
     sum++;
-    }
 
+    setTimeout(drawLine,pause);
+
+    }
 }
+
+
+
+//------------repairs_page
+
+var j = 0;
+var statement =["These tires are so clean and shiny, amazing!","Just to be frank: We hate changing tires as much as anybody else does!","Affordable prices", "Just ask us!","We love to fix tires!"];
+
+var laufband = function(){  
+  if(repairspage == true){  
+   
+    $('#tirefix h2').html(statement[j%statement.length]).css('left','110vw');
+     var LS = "-200vw";//'"-' + 100 + 'vw"'; //'"-' + statement[j%statement.length].length*4 + 'vw"';
+    $('#tirefix h2').fadeIn(10).animate({left: LS },18000,"linear").fadeOut(1000);
+   
+    console.log(LS);
+    j++;
+    setTimeout(laufband,19500);
+  }
+}
+
 
 
 
@@ -139,7 +177,8 @@ var Zeit = 3000;
 
 var credent = function(){
    if(landpage === true){
-   var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+   var X = Math.random()*50+"vw"; 
+   var Y = Math.random()*40+"vw";
    var T =Math.floor(TEXT.length*Math.random());
    var S = Math.random()*1.8+.5 + "em";
    var K = Math.floor(KOL.length*Math.random());
@@ -153,7 +192,8 @@ var credent = function(){
  
 var credent1 = function(){
    if(landpage === true){
-   var X = Math.random()*50+"vw"; var Y = Math.random()*40+"vw";
+   var X = Math.random()*50+"vw";
+   var Y = Math.random()*40+"vw";
    var T =Math.floor(TEXT.length*Math.random());
    var S = Math.random()*1.8+.5 + "em";
    var K = Math.floor(KOL.length*Math.random());
@@ -178,24 +218,30 @@ $(document).on('turbolinks:load ajaxSuccess', function(){
   landpage = false;
   if(window.location.pathname == "/" || window.location.pathname =="/static_pages/landing_page"){
   landpage = true;
-  }
-
   credent();
   credent1();
 //--------landing_page images
   landingPage();
+  }
 
 
 
 
+
+$('#Knopf').click(function(){
+  ;
+})
 
 
 
 
 //--------------repairs page------------------------------
+  repairspage = false;
+  if( window.location.pathname =="/static_pages/repairs"){
+  repairspage = true;
+  laufband();
+  }
 
-  $('#test').animate({left:'40vw',top:'20vh',width: '45vw',height: '19.5vw'},3330)
-  .delay(3330).animate({left:'40vw',top:'200vh',width: '0vw',height: '0vw'},3330);
 
 
 
@@ -212,6 +258,7 @@ if(window.screen.width>800)
     });
 } 
 //-------------raty plugin
+
 refreshRating();
 
 $('#logout').on('click',function(){
@@ -250,16 +297,19 @@ window.cookieconsent.initialise({
      gruen = sliders[1].noUiSlider.get(); 
      blau = sliders[2].noUiSlider.get(); 
      opak = sliders[3].noUiSlider.get()/255; 
-     lineWidth = sliders[4].noUiSlider.get()/5; 
+     lineWidth = sliders[4].noUiSlider.get()/2.5 +.5; 
+     pause =5* Math.exp(sliders[5].noUiSlider.get()/35) - 5;
    
     var color = 'rgba(' +
-      sliders[0].noUiSlider.get() + ',' +
-      sliders[1].noUiSlider.get() + ',' +
-      sliders[2].noUiSlider.get() + ',' +
+      (rot) + ',' +
+      (gruen) + ',' +
+      (blau) + ',' +
       (opak) + ')';
 
     // Fill the color box.
-
+     $('#lineWidth .noUi-handle').html("line  \n  width");
+     $('#opac .noUi-handle').html("opa-  \n  city");
+     $('#pause .noUi-handle').html(Math.floor(pause) + " ms");
      $('#result').css("width",lineWidth);
      $('#opac .noUi-base, #opac .noUi-connect, #opac').css("background-color", color);
      $('#red .noUi-connect').css("background-color","rgba(" +(rot)+ ", 0 , 0 , 1)");
@@ -287,9 +337,15 @@ window.cookieconsent.initialise({
       })
     });
     // Bind the color changing function to the slide event.
+   // sliders[i].noUiSlider.on('slide', setColor);
     sliders[i].noUiSlider.on('slide', setColor);
+   // sliders[i].noUiSlider.on('slide', changeInterval);
+   //$('#result').on('click', function(){
+   // changeInterval();
+   //});
   }
  
+
 
  //if (navigator.geolocation) {
  // navigator.geolocation.getCurrentPosition(function(position) {
